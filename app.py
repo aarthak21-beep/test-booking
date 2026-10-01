@@ -4,7 +4,7 @@ from datetime import date
 
 app = Flask(__name__)
 
-app.secret_key = "change-this-secret-key"
+app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
 
 DATABASE = "bookings.db"
 
