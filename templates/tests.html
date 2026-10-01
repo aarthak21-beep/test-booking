@@ -1,360 +1,1514 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Tests | Moti Diagnostics Centre</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Our Tests | MOTI Diagnostics Centre</title>
 
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f9ff;
-            color: #222;
-        }
+/* =========================
+   GLOBAL
+========================= */
 
-        /* Header */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background: #0056b3;
-            color: white;
-            padding: 18px 30px;
-            text-align: center;
-            border-radius: 0 0 14px 14px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f9ff;
+    color: #1d2939;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        /* Main */
+a {
+    text-decoration: none;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-        }
 
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .intro h2 {
-            color: #0056b3;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-        .intro p {
-            font-size: 17px;
-            color: #555;
-        }
+    min-height: 78px;
+    padding: 11px 28px;
 
-        /* Category */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        .category {
-            margin-bottom: 40px;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #003b7a,
+            #0066c7,
+            #0085e8
+        );
 
-        .category-title {
-            color: #0056b3;
-            font-size: 24px;
-            margin-bottom: 18px;
-            border-left: 5px solid #0056b3;
-            padding-left: 12px;
-        }
+    border-bottom: 3px solid #00346b;
 
-        /* Cards */
+    box-shadow:
+        0 5px 22px rgba(0,61,122,0.25);
+}
 
-        .test-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
 
-        .test-card {
-            background: white;
-            padding: 22px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: 0.2s;
-        }
+/* =========================
+   LOGO
+========================= */
 
-        .test-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 7px 18px rgba(0,0,0,0.12);
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-        .test-card h3 {
-            margin-top: 0;
-            margin-bottom: 18px;
-            font-size: 18px;
-        }
+    color: white;
+    white-space: nowrap;
+}
 
-        .book-btn {
-            display: inline-block;
-            background: #0056b3;
-            color: white;
-            text-decoration: none;
-            padding: 9px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+.logo-icon {
+    font-size: 30px;
+}
 
-        .book-btn:hover {
-            background: #003f87;
-        }
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
 
-        /* Home Sample */
+.logo-main {
+    position: relative;
 
-        .home-sample {
-            background: #eaf4ff;
-            padding: 25px;
-            border-radius: 14px;
-            text-align: center;
-            margin-top: 20px;
-        }
+    font-size: 37px;
+    font-weight: 900;
 
-        .home-sample h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
+    letter-spacing: 2px;
+    line-height: 1;
+}
 
-        /* Back */
+.logo-o {
+    position: relative;
 
-        .back-home {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 10px;
-            padding: 12px 24px;
-            background: #0056b3;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+    display: inline-flex;
 
-        /* Mobile */
+    width: 32px;
+    height: 32px;
 
-        @media (max-width: 768px) {
+    margin: 0 1px;
 
-            .test-grid {
-                grid-template-columns: 1fr;
-            }
+    align-items: center;
+    justify-content: center;
 
-            .container {
-                margin: 20px auto;
-                padding: 15px;
-            }
+    vertical-align: middle;
+}
 
-            .intro h2 {
-                font-size: 25px;
-            }
+.logo-ring {
+    width: 28px;
+    height: 28px;
 
-            header h1 {
-                font-size: 22px;
-            }
+    border: 5px solid white;
 
-        }
+    border-radius: 50%;
 
-    </style>
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 0 2px rgba(255,255,255,0.18),
+        inset 0 0 8px rgba(255,255,255,0.25);
+}
+
+.logo-ring::before {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border: 3px solid #7ed0ff;
+
+    border-radius: 50%;
+}
+
+.logo-pearl {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #fff7d6 35%,
+            #e8c86c 75%,
+            #c99d36
+        );
+
+    box-shadow:
+        0 1px 5px rgba(0,0,0,0.35),
+        inset 1px 1px 3px rgba(255,255,255,0.9);
+
+    z-index: 2;
+}
+
+.logo-sub {
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    color: rgba(255,255,255,0.92);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.13);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-menu a {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 9px 11px;
+
+    border-radius: 9px;
+
+    transition: 0.25s;
+}
+
+.nav-menu a:hover {
+    background: white;
+    color: #0056b3;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.tests-hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 75px 20px 85px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0,119,255,0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(0,174,239,0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e9f5ff,
+            #ffffff
+        );
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 17px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #0066c7;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 18px rgba(0,75,153,0.10);
+}
+
+.tests-hero h1 {
+    color: #004f9e;
+
+    font-size: 46px;
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    margin-bottom: 14px;
+}
+
+.tests-hero h1 span {
+    color: #0084df;
+}
+
+.tests-hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #596879;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    max-width: 1120px;
+
+    margin: auto;
+
+    padding: 70px 20px 85px;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category {
+    margin-bottom: 55px;
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #0056b3;
+
+    font-size: 26px;
+    font-weight: 900;
+
+    margin-bottom: 20px;
+
+    padding-left: 14px;
+
+    border-left: 5px solid #0085e8;
+}
+
+
+/* =========================
+   TEST GRID
+========================= */
+
+.test-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   TEST CARD
+========================= */
+
+.test-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 170px;
+
+    padding: 25px 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f6fbff
+        );
+
+    border: 1px solid #dfebf7;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 22px rgba(0,75,153,0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.test-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0066cc,
+            #00a4ef
+        );
+}
+
+.test-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 32px rgba(0,75,153,0.14);
+}
+
+.test-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 14px;
+
+    background: #e9f5ff;
+
+    font-size: 25px;
+}
+
+.test-card h3 {
+    color: #174a7e;
+
+    font-size: 19px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.35;
+}
+
+.book-btn {
+    display: block;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 11px 16px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #005fc4,
+            #0086eb
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px rgba(0,102,204,0.18);
+
+    transition: 0.2s;
+}
+
+.book-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,102,204,0.25);
+}
+
+
+/* =========================
+   HOME COLLECTION
+========================= */
+
+.home-sample {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 15px auto 40px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0056b3,
+            #0088e8
+        );
+
+    box-shadow:
+        0 15px 35px rgba(0,75,153,0.20);
+
+    overflow: hidden;
+}
+
+.home-sample::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -80px;
+    right: -50px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+}
+
+.home-sample h2 {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    font-size: 28px;
+}
+
+.home-sample p {
+    position: relative;
+
+    opacity: 0.92;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   BACK HOME
+========================= */
+
+.back-home {
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto 0;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #0056b3;
+
+    border: 1px solid #dceaf7;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 18px rgba(0,75,153,0.08);
+
+    transition: 0.2s;
+}
+
+.back-home:hover {
+    transform: translateY(-2px);
+
+    background: #0056b3;
+
+    color: white;
+}
+
+
+/* =========================
+   MOBILE BOTTOM BAR
+========================= */
+
+.mobile-bottom-bar {
+    display: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .nav-menu a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .test-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding-bottom: 72px;
+    }
+
+
+    /* HEADER */
+
+    .header {
+        min-height: 68px;
+
+        padding: 9px 12px;
+
+        gap: 8px;
+    }
+
+    .logo {
+        gap: 5px;
+
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+    .logo-icon {
+        font-size: 23px;
+    }
+
+    .logo-text {
+        gap: 4px;
+
+        min-width: 0;
+    }
+
+    .logo-main {
+        font-size: 28px;
+
+        letter-spacing: 1px;
+    }
+
+    .logo-o {
+        width: 26px;
+        height: 26px;
+    }
+
+    .logo-ring {
+        width: 22px;
+        height: 22px;
+
+        border-width: 4px;
+    }
+
+    .logo-ring::before {
+        width: 11px;
+        height: 11px;
+
+        border-width: 2px;
+    }
+
+    .logo-pearl {
+        width: 6px;
+        height: 6px;
+    }
+
+    .logo-sub {
+        font-size: 7px;
+
+        letter-spacing: 0.8px;
+
+        margin-left: 1px;
+    }
+
+
+    /* MENU */
+
+    .menu-toggle {
+        display: block;
+
+        flex-shrink: 0;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 67px;
+        left: 10px;
+        right: 10px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 10px;
+
+        background: white;
+
+        border: 1px solid #e1ebf5;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu a {
+        display: block;
+
+        padding: 12px 14px;
+
+        color: #0056b3;
+
+        background: #f5f9ff;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    .nav-menu a:hover {
+        color: white;
+
+        background: #0066cc;
+    }
+
+
+    /* HERO */
+
+    .tests-hero {
+        padding: 55px 18px 60px;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+
+        padding: 7px 13px;
+    }
+
+    .tests-hero h1 {
+        font-size: 34px;
+    }
+
+    .tests-hero p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    /* MAIN */
+
+    .container {
+        padding: 50px 15px 65px;
+    }
+
+
+    /* CATEGORY */
+
+    .category {
+        margin-bottom: 42px;
+    }
+
+    .category-title {
+        font-size: 22px;
+
+        padding-left: 11px;
+
+        margin-bottom: 17px;
+    }
+
+
+    /* CARDS */
+
+    .test-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .test-card {
+        min-height: 155px;
+
+        padding: 21px 18px;
+
+        border-radius: 17px;
+    }
+
+    .test-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 23px;
+
+        margin-bottom: 11px;
+    }
+
+    .test-card h3 {
+        font-size: 18px;
+
+        margin-bottom: 15px;
+    }
+
+    .book-btn {
+        min-height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 15px;
+    }
+
+
+    /* HOME SAMPLE */
+
+    .home-sample {
+        margin-top: 5px;
+
+        padding: 30px 20px;
+
+        border-radius: 19px;
+    }
+
+    .home-sample h2 {
+        font-size: 25px;
+    }
+
+    .home-sample p {
+        font-size: 14px;
+    }
+
+
+    /* BACK */
+
+    .back-home {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 14px;
+    }
+
+
+    /* BOTTOM BAR */
+
+    .mobile-bottom-bar {
+        display: flex;
+
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 9999;
+
+        padding: 7px 8px;
+
+        background: rgba(255,255,255,0.97);
+
+        backdrop-filter: blur(10px);
+
+        box-shadow:
+            0 -5px 20px rgba(0,0,0,0.14);
+
+        border-top:
+            1px solid #e4edf7;
+    }
+
+    .mobile-bottom-bar a {
+        flex: 1;
+
+        min-height: 56px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 2px;
+
+        border-radius: 10px;
+
+        color: #0056b3;
+
+        font-size: 11px;
+
+        font-weight: 800;
+    }
+
+    .mobile-bottom-bar a:nth-child(2) {
+        color: #0b9b50;
+    }
+
+    .mobile-bottom-bar a:nth-child(3) {
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                #005fc4,
+                #0086eb
+            );
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .logo-main {
+        font-size: 25px;
+    }
+
+    .logo-sub {
+        font-size: 6.5px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .logo-icon {
+        font-size: 21px;
+    }
+
+    .tests-hero h1 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 45px 20px 95px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #002f61,
+            #004984
+        );
+
+    color: white;
+}
+
+.footer h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.footer p {
+    opacity: 0.88;
+
+    margin: 6px 0;
+
+    font-size: 14px;
+}
+
+.footer-line {
+    max-width: 600px;
+
+    margin: 23px auto 14px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.25);
+}
+
+.copyright {
+    font-size: 12px !important;
+
+    opacity: 0.65 !important;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <h1>🧪 MOTI DIAGNOSTICS CENTRE</h1>
-</header>
+<!-- ================= HEADER ================= -->
 
+<header class="header">
 
-<div class="container">
+```
+<div class="logo">
 
-    <div class="intro">
+    <span class="logo-icon">🔬</span>
 
-        <h2>🩸 Our Diagnostics Tests</h2>
+    <div class="logo-text">
 
-        <p>
-            We offer a wide range of accurate diagnostic tests
-            at affordable prices.
-        </p>
+        <span class="logo-main">
+            M<span class="logo-o">
+                <span class="logo-ring">
+                    <span class="logo-pearl"></span>
+                </span>
+            </span>TI
+        </span>
 
-    </div>
-
-
-    <!-- Blood Tests -->
-
-    <div class="category">
-
-        <h2 class="category-title">🩸 Blood Tests</h2>
-
-        <div class="test-grid">
-
-            <div class="test-card">
-                <h3>CBC</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Blood Sugar</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Lipid Profile</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Liver Function Test (LFT)</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Kidney Function Test (KFT)</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-        </div>
+        <span class="logo-sub">
+            DIAGNOSTICS CENTRE
+        </span>
 
     </div>
-
-
-    <!-- Heart Tests -->
-
-    <div class="category">
-
-        <h2 class="category-title">❤️ Heart Tests</h2>
-
-        <div class="test-grid">
-
-            <div class="test-card">
-                <h3>ECG</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>2D Echo</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Imaging -->
-
-    <div class="category">
-
-        <h2 class="category-title">🩻 Imaging</h2>
-
-        <div class="test-grid">
-
-            <div class="test-card">
-                <h3>X-Ray</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Ultrasound</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>MRI</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>CT Scan</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Special Tests -->
-
-    <div class="category">
-
-        <h2 class="category-title">🦋 Special Tests</h2>
-
-        <div class="test-grid">
-
-            <div class="test-card">
-                <h3>Thyroid Tests</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Diabetes Tests</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Hormone Tests</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Health Packages -->
-
-    <div class="category">
-
-        <h2 class="category-title">🏥 Health Packages</h2>
-
-        <div class="test-grid">
-
-            <div class="test-card">
-                <h3>Basic Health Checkup</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-            <div class="test-card">
-                <h3>Full Body Checkup</h3>
-                <a href="/#booking" class="book-btn">Book Now</a>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Home Sample Collection -->
-
-    <div class="home-sample">
-
-        <h2>🚗 Home Sample Collection</h2>
-
-        <p>
-            Home Sample Collection is Available.
-        </p>
-
-    </div>
-
-
-    <a href="/" class="back-home">
-        🏠 Back to Home
-    </a>
 
 </div>
 
+
+<button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open menu"
+    onclick="toggleMenu()"
+>
+    ☰
+</button>
+
+
+<nav class="nav-menu" id="navMenu">
+
+    <a href="/" onclick="closeMenu()">🏠 Home</a>
+
+    <a href="/tests" onclick="closeMenu()">🧪 Tests</a>
+
+    <a href="/book-test" onclick="closeMenu()">📅 Book Test</a>
+
+    <a href="/about" onclick="closeMenu()">📖 About Us</a>
+
+    <a href="/contact" onclick="closeMenu()">📞 Contact Us</a>
+
+    <a href="tel:+918286289143">📞 Call</a>
+
+</nav>
+```
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="tests-hero">
+
+```
+<div class="hero-badge">
+    🧬 Trusted Diagnostic Care
+</div>
+
+<h1>
+    Our <span>Diagnostic Tests</span>
+</h1>
+
+<p>
+    Explore our range of diagnostic tests and
+    choose the test that suits your healthcare needs.
+</p>
+```
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+```
+<!-- BLOOD TESTS -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🩸 Blood Tests
+    </h2>
+
+    <div class="test-grid">
+
+        <div class="test-card">
+
+            <div class="test-icon">🩸</div>
+
+            <h3>CBC</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🧪</div>
+
+            <h3>Blood Sugar</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">❤️</div>
+
+            <h3>Lipid Profile</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🧬</div>
+
+            <h3>Liver Function Test (LFT)</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">💧</div>
+
+            <h3>Kidney Function Test (KFT)</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HEART TESTS -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        ❤️ Heart Tests
+    </h2>
+
+    <div class="test-grid">
+
+        <div class="test-card">
+
+            <div class="test-icon">❤️</div>
+
+            <h3>ECG</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">💓</div>
+
+            <h3>2D Echo</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IMAGING -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🩻 Imaging
+    </h2>
+
+    <div class="test-grid">
+
+        <div class="test-card">
+
+            <div class="test-icon">🩻</div>
+
+            <h3>X-Ray</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🔍</div>
+
+            <h3>Ultrasound</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🧲</div>
+
+            <h3>MRI</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🖥️</div>
+
+            <h3>CT Scan</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPECIAL TESTS -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🦋 Special Tests
+    </h2>
+
+    <div class="test-grid">
+
+        <div class="test-card">
+
+            <div class="test-icon">🦋</div>
+
+            <h3>Thyroid Tests</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🩸</div>
+
+            <h3>Diabetes Tests</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🧬</div>
+
+            <h3>Hormone Tests</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HEALTH PACKAGES -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        🏥 Health Packages
+    </h2>
+
+    <div class="test-grid">
+
+        <div class="test-card">
+
+            <div class="test-icon">🩺</div>
+
+            <h3>Basic Health Checkup</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+
+        <div class="test-card">
+
+            <div class="test-icon">🏥</div>
+
+            <h3>Full Body Checkup</h3>
+
+            <a href="/#booking" class="book-btn">
+                Book Now →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOME SAMPLE -->
+
+<div class="home-sample">
+
+    <h2>
+        🏠 Home Sample Collection
+    </h2>
+
+    <p>
+        Home Sample Collection is Available.
+        Book your test and enjoy convenient sample collection at home.
+    </p>
+
+</div>
+
+
+<a href="/" class="back-home">
+    🏠 Back to Home
+</a>
+```
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+```
+<h3>
+    MOTI DIAGNOSTICS CENTRE
+</h3>
+
+<p>
+    Reliable Diagnostic Services for You and Your Family
+</p>
+
+<p>
+    📍 Shanti Garden, Mira Road (E), Thane – 401107
+</p>
+
+<p>
+    📞 +91 8286289143
+</p>
+
+<div class="footer-line"></div>
+
+<p class="copyright">
+    © 2026 MOTI DIAGNOSTICS CENTRE.
+    All Rights Reserved.
+</p>
+```
+
+</footer>
+
+<!-- ================= MOBILE BOTTOM BAR ================= -->
+
+<div class="mobile-bottom-bar">
+
+```
+<a href="tel:+918286289143">
+    <span>📞</span>
+    <span>Call</span>
+</a>
+
+<a href="https://wa.me/919867242848">
+    <span>💬</span>
+    <span>WhatsApp</span>
+</a>
+
+<a href="/#booking">
+    <span>🧪</span>
+    <span>Book Test</span>
+</a>
+```
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("navMenu");
+
+    menu.classList.toggle("show");
+
+}
+
+
+function closeMenu() {
+
+    const menu =
+        document.getElementById("navMenu");
+
+    menu.classList.remove("show");
+
+}
+
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const menu =
+            document.getElementById("navMenu");
+
+        const toggle =
+            document.querySelector(".menu-toggle");
+
+        if (
+            menu &&
+            toggle &&
+            !menu.contains(event.target) &&
+            !toggle.contains(event.target)
+        ) {
+
+            menu.classList.remove("show");
+
+        }
+
+    }
+);
+
+</script>
+
 </body>
+
 </html>
