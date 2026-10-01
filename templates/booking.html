@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MOTI DIAGNOSTICS CENTRE</title>
@@ -30,10 +30,17 @@ body {
     background: #f4f9ff;
     color: #1d2939;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
 }
 
 
@@ -92,55 +99,63 @@ a {
 }
 
 .logo-o {
-  position:relative;
-  display:inline-flex;
-  width:34px;
-  height:34px;
-  margin:0 2px;
-  align-items:center;
-  justify-content:center;
-  vertical-align:middle;
+    position: relative;
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    margin: 0 2px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
 }
 
 .logo-ring {
-  width:29px;
-  height:29px;
-  border:5px solid #ffffff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  box-shadow:
-    0 0 0 2px rgba(255,255,255,0.18),
-    inset 0 0 8px rgba(255,255,255,0.25);
+    width: 29px;
+    height: 29px;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    box-shadow:
+        0 0 0 2px rgba(255,255,255,0.18),
+        inset 0 0 8px rgba(255,255,255,0.25);
 }
 
 .logo-ring::before {
-  content:"";
-  position:absolute;
-  width:15px;
-  height:15px;
-  border:3px solid #7ed0ff;
-  border-radius:50%;
+    content: "";
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    border: 3px solid #7ed0ff;
+    border-radius: 50%;
 }
 
 .logo-pearl {
-  position:absolute;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:radial-gradient(
-    circle at 30% 25%,
-    #ffffff,
-    #fff7d6 35%,
-    #e8c86c 75%,
-    #c99d36
-  );
-  box-shadow:
-    0 1px 5px rgba(0,0,0,0.35),
-    inset 1px 1px 3px rgba(255,255,255,0.9);
-  z-index:2;
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 30% 25%,
+        #ffffff,
+        #fff7d6 35%,
+        #e8c86c 75%,
+        #c99d36
+    );
+
+    box-shadow:
+        0 1px 5px rgba(0,0,0,0.35),
+        inset 1px 1px 3px rgba(255,255,255,0.9);
+
+    z-index: 2;
 }
 
 .logo-sub {
@@ -148,6 +163,35 @@ a {
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-top: 5px;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.menu-toggle:hover {
+    background: rgba(255,255,255,0.22);
 }
 
 
@@ -163,6 +207,7 @@ a {
 
 .nav-menu a {
     color: white;
+
     font-size: 14px;
     font-weight: 700;
 
@@ -176,7 +221,6 @@ a {
 .nav-menu a:hover {
     background: white;
     color: #0056b3;
-
     transform: translateY(-2px);
 }
 
@@ -202,12 +246,12 @@ a {
     background:
         radial-gradient(
             circle at 85% 20%,
-            rgba(0, 119, 255, 0.18),
+            rgba(0,119,255,0.18),
             transparent 30%
         ),
         radial-gradient(
             circle at 10% 80%,
-            rgba(0, 174, 239, 0.14),
+            rgba(0,174,239,0.14),
             transparent 30%
         ),
         linear-gradient(
@@ -406,7 +450,6 @@ a {
 
 .section-heading {
     text-align: center;
-
     margin-bottom: 45px;
 }
 
@@ -587,19 +630,16 @@ a {
 
 .collection-box h2 {
     font-size: 34px;
-
     margin-bottom: 12px;
 }
 
 .collection-box p {
     opacity: 0.92;
-
     font-size: 17px;
 }
 
 .collection-points {
     display: grid;
-
     gap: 12px;
 }
 
@@ -661,6 +701,8 @@ a {
 .booking-form select {
     width: 100%;
 
+    min-height: 50px;
+
     padding: 14px 15px;
 
     border: 1px solid #d8e3ee;
@@ -693,6 +735,8 @@ a {
 
     padding: 16px;
 
+    min-height: 52px;
+
     border: none;
 
     border-radius: 11px;
@@ -720,6 +764,93 @@ a {
 
     box-shadow:
         0 10px 22px rgba(0,102,204,0.20);
+}
+
+
+/* =========================
+   BOOKING SUCCESS
+========================= */
+
+.booking-success {
+    display: none;
+
+    max-width: 590px;
+
+    margin: auto;
+
+    padding: 45px 30px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    border: 1px solid #d9f2e3;
+
+    box-shadow:
+        0 15px 40px rgba(0,75,153,0.12);
+
+    text-align: center;
+}
+
+.success-icon {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e9fff1;
+
+    font-size: 42px;
+}
+
+.booking-success h2 {
+    color: #087443;
+
+    font-size: 29px;
+
+    margin-bottom: 10px;
+}
+
+.booking-success p {
+    color: #667085;
+
+    margin-bottom: 22px;
+}
+
+.success-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.success-buttons a {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-weight: 800;
+
+    color: white;
+}
+
+.success-home {
+    background: #0066cc;
+}
+
+.success-whatsapp {
+    background: #20c866;
 }
 
 
@@ -762,19 +893,16 @@ a {
 
 .why-icon {
     font-size: 42px;
-
     margin-bottom: 12px;
 }
 
 .why-card h3 {
     color: #0056b3;
-
     margin-bottom: 8px;
 }
 
 .why-card p {
     color: #667085;
-
     font-size: 15px;
 }
 
@@ -837,7 +965,6 @@ a {
 
 .contact-item h3 {
     color: #0056b3;
-
     margin-bottom: 8px;
 }
 
@@ -847,8 +974,45 @@ a {
 
 .contact-item a {
     color: #0066cc;
-
     font-weight: 700;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 22px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #20c866;
+
+    color: white;
+
+    font-size: 29px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.20);
+
+    z-index: 9000;
+
+    transition: 0.25s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
 }
 
 
@@ -873,13 +1037,11 @@ a {
 
 .footer h3 {
     font-size: 26px;
-
     margin-bottom: 8px;
 }
 
 .footer p {
     opacity: 0.88;
-
     margin: 7px 0;
 }
 
@@ -894,7 +1056,6 @@ a {
 
 .copyright {
     font-size: 13px;
-
     opacity: 0.65;
 }
 
@@ -936,7 +1097,6 @@ a {
         margin-left: 20px;
         margin-right: 20px;
     }
-
 }
 
 
@@ -946,53 +1106,167 @@ a {
 
 @media (max-width: 650px) {
 
+    body {
+        padding-bottom: 72px;
+    }
+
+
+    /* HEADER */
+
     .header {
-        position: relative;
+        position: sticky;
 
-        flex-direction: column;
+        min-height: 68px;
 
-        gap: 15px;
+        flex-direction: row;
 
-        padding: 15px 10px;
+        gap: 8px;
+
+        padding: 9px 12px;
 
         border-radius: 0;
     }
 
     .logo {
-        justify-content: center;
-        flex-wrap: wrap;
+        gap: 6px;
+
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+    .logo-icon {
+        font-size: 24px;
     }
 
     .logo-main {
-        font-size: 34px;
+        font-size: 30px;
+        letter-spacing: 1px;
     }
 
+    .logo-o {
+        width: 27px;
+        height: 27px;
+        margin: 0 1px;
+    }
+
+    .logo-ring {
+        width: 23px;
+        height: 23px;
+        border-width: 4px;
+    }
+
+    .logo-ring::before {
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+
+    .logo-pearl {
+        width: 6px;
+        height: 6px;
+    }
+
+    .logo-sub {
+        display: none;
+    }
+
+
+    /* HAMBURGER */
+
+    .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+
+    /* MOBILE NAV */
+
     .nav-menu {
-        width: 100%;
+        position: absolute;
 
-        justify-content: center;
+        top: 67px;
+        left: 10px;
+        right: 10px;
 
-        flex-wrap: wrap;
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 10px;
+
+        background: white;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 12px 30px rgba(0,0,0,0.18);
+
+        border: 1px solid #e5eef8;
+    }
+
+    .nav-menu.show {
+        display: flex;
     }
 
     .nav-menu a {
-        font-size: 12px;
+        display: block;
 
-        padding: 7px 8px;
+        padding: 12px 14px;
+
+        color: #0056b3;
+
+        background: #f5f9ff;
+
+        border-radius: 10px;
+
+        font-size: 14px;
     }
 
-    .hero {
-        min-height: 500px;
+    .nav-menu a:hover {
+        color: white;
 
-        padding: 65px 18px;
+        background: #0066cc;
+
+        transform: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 510px;
+        padding: 60px 18px 70px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-badge {
+        font-size: 12px;
+        padding: 7px 14px;
     }
 
     .hero h1 {
         font-size: 36px;
+        line-height: 1.18;
     }
 
     .hero p {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .buttons {
+        margin-top: 26px;
     }
 
     .book-btn,
@@ -1000,30 +1274,67 @@ a {
     .contact-btn {
         display: block;
 
-        max-width: 300px;
+        width: 100%;
+        max-width: 330px;
 
         margin: 10px auto;
+
+        padding: 14px 20px;
+
+        text-align: center;
     }
 
+
+    /* TRUST */
+
     .trust-strip {
-        margin: -25px 15px 0;
+        margin: -25px 12px 0;
 
         grid-template-columns: repeat(2, 1fr);
+
+        border-radius: 15px;
     }
 
     .trust-item {
-        border-bottom: 1px solid #edf2f7;
+        padding: 18px 8px;
     }
+
+    .trust-icon {
+        font-size: 24px;
+    }
+
+    .trust-item strong {
+        font-size: 14px;
+    }
+
+    .trust-item small {
+        font-size: 11px;
+    }
+
+
+    /* SECTIONS */
 
     .section,
     .booking-section {
-        padding: 65px 18px;
+        padding: 58px 15px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
     }
 
     .section-heading h2,
     .questions h2 {
-        font-size: 29px;
+        font-size: 28px;
+        line-height: 1.25;
     }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+
+    /* TESTS */
 
     .test-container,
     .why-container,
@@ -1031,19 +1342,106 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .test-card {
+        padding: 25px 20px;
+    }
+
+    .test-card p {
+        min-height: auto;
+    }
+
+    .test-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+
+    /* COLLECTION */
+
     .collection-box {
         grid-template-columns: 1fr;
 
-        padding: 30px 23px;
+        padding: 28px 20px;
+
+        border-radius: 20px;
+
+        gap: 24px;
     }
 
     .collection-box h2 {
-        font-size: 28px;
+        font-size: 27px;
     }
 
-    .booking-form {
-        padding: 27px 20px;
+    .collection-box p {
+        font-size: 15px;
     }
+
+
+    /* BOOKING FORM */
+
+    .booking-form {
+        padding: 25px 17px;
+
+        border-radius: 18px;
+    }
+
+    .booking-form label {
+        margin-top: 15px;
+    }
+
+    .booking-form input,
+    .booking-form select {
+        min-height: 52px;
+        font-size: 16px;
+    }
+
+    .booking-form button {
+        min-height: 54px;
+        font-size: 17px;
+    }
+
+
+    /* SUCCESS */
+
+    .booking-success {
+        padding: 35px 20px;
+        border-radius: 18px;
+    }
+
+    .booking-success h2 {
+        font-size: 26px;
+    }
+
+
+    /* QUESTIONS */
+
+    .questions {
+        padding: 60px 15px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-item {
+        padding: 21px;
+    }
+
+
+    /* FLOATING WHATSAPP */
+
+    .whatsapp-float {
+        right: 15px;
+        bottom: 83px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 26px;
+    }
+
+
+    /* BOTTOM BAR */
 
     .mobile-bottom-bar {
         display: flex;
@@ -1056,26 +1454,67 @@ a {
 
         z-index: 9999;
 
-        background: white;
+        padding: 7px 8px;
 
-        padding: 8px;
+        background: rgba(255,255,255,0.97);
+
+        backdrop-filter: blur(10px);
 
         box-shadow:
-            0 -4px 18px rgba(0,0,0,0.15);
+            0 -5px 20px rgba(0,0,0,0.14);
+
+        border-top:
+            1px solid #e4edf7;
     }
 
     .mobile-bottom-bar a {
         flex: 1;
 
+        min-height: 56px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 2px;
+
         text-align: center;
 
-        padding: 10px 3px;
+        padding: 5px 3px;
 
-        font-size: 12px;
+        border-radius: 10px;
 
-        font-weight: 700;
+        font-size: 11px;
+
+        font-weight: 800;
 
         color: #0056b3;
+
+        transition: 0.2s;
+    }
+
+    .mobile-bottom-bar a:active {
+        background: #edf6ff;
+        transform: scale(0.96);
+    }
+
+    .mobile-bottom-bar a:nth-child(2) {
+        color: #0b9b50;
+    }
+
+    .mobile-bottom-bar a:nth-child(3) {
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                #005fc4,
+                #0086eb
+            );
     }
 
 }
@@ -1092,13 +1531,18 @@ a {
     }
 
     .logo-main {
-        font-size: 31px;
+        font-size: 27px;
     }
 
-    .logo-sub {
-        font-size: 10px;
+    .logo-icon {
+        font-size: 22px;
     }
 
+    .menu-toggle {
+        width: 41px;
+        height: 41px;
+        font-size: 22px;
+    }
 }
 
 </style>
@@ -1118,12 +1562,12 @@ a {
         <span class="logo-icon">🔬</span>
 
         <span class="logo-main">
-  M<span class="logo-o">
-    <span class="logo-ring">
-      <span class="logo-pearl"></span>
-    </span>
-  </span>TI
-</span>
+            M<span class="logo-o">
+                <span class="logo-ring">
+                    <span class="logo-pearl"></span>
+                </span>
+            </span>TI
+        </span>
 
         <span class="logo-sub">
             DIAGNOSTICS CENTRE
@@ -1132,17 +1576,27 @@ a {
     </div>
 
 
-    <nav class="nav-menu">
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        onclick="toggleMenu()"
+    >
+        ☰
+    </button>
 
-        <a href="/">🏠 Home</a>
 
-        <a href="/tests">🧪 Tests</a>
+    <nav class="nav-menu" id="navMenu">
 
-        <a href="/book-test">📅 Book Test</a>
+        <a href="/" onclick="closeMenu()">🏠 Home</a>
 
-        <a href="/about">📖 About Us</a>
+        <a href="/tests" onclick="closeMenu()">🧪 Tests</a>
 
-        <a href="/contact">📞 Contact Us</a>
+        <a href="/book-test" onclick="closeMenu()">📅 Book Test</a>
+
+        <a href="/about" onclick="closeMenu()">📖 About Us</a>
+
+        <a href="/contact" onclick="closeMenu()">📞 Contact Us</a>
 
         <a href="tel:+918286289143">📞 Call</a>
 
@@ -1179,8 +1633,10 @@ a {
                 🧪 Book Your Test
             </a>
 
-            <a class="whatsapp-btn"
-               href="https://wa.me/919867242848">
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/919867242848"
+            >
                 💬 WhatsApp Enquiry
             </a>
 
@@ -1275,9 +1731,11 @@ a {
                 routine health evaluation.
             </p>
 
-            <a href="#booking"
-               class="test-btn"
-               onclick="selectTest('CBC')">
+            <a
+                href="#booking"
+                class="test-btn"
+                onclick="selectTest('CBC')"
+            >
                 Book Now →
             </a>
 
@@ -1295,9 +1753,11 @@ a {
                 overall heart health.
             </p>
 
-            <a href="#booking"
-               class="test-btn"
-               onclick="selectTest('Lipid Profile')">
+            <a
+                href="#booking"
+                class="test-btn"
+                onclick="selectTest('Lipid Profile')"
+            >
                 Book Now →
             </a>
 
@@ -1315,9 +1775,11 @@ a {
                 to liver health.
             </p>
 
-            <a href="#booking"
-               class="test-btn"
-               onclick="selectTest('Liver Function Test')">
+            <a
+                href="#booking"
+                class="test-btn"
+                onclick="selectTest('Liver Function Test')"
+            >
                 Book Now →
             </a>
 
@@ -1335,9 +1797,11 @@ a {
                 of kidney function.
             </p>
 
-            <a href="#booking"
-               class="test-btn"
-               onclick="selectTest('Kidney Function Test')">
+            <a
+                href="#booking"
+                class="test-btn"
+                onclick="selectTest('Kidney Function Test')"
+            >
                 Book Now →
             </a>
 
@@ -1407,36 +1871,54 @@ a {
     </div>
 
 
-    <div class="booking-form">
+    <div class="booking-form" id="bookingFormBox">
 
-        <form method="POST">
+        <form
+            method="POST"
+            id="bookingForm"
+        >
 
 
-            <label>Name</label>
+            <label for="name">
+                Name
+            </label>
 
             <input
+                id="name"
                 type="text"
                 name="name"
                 placeholder="Enter your name"
+                autocomplete="name"
                 required
             >
 
 
-            <label>Mobile Number</label>
+            <label for="mobile">
+                Mobile Number
+            </label>
 
             <input
+                id="mobile"
                 type="tel"
                 name="mobile"
                 placeholder="Enter your 10-digit mobile number"
+                inputmode="numeric"
+                autocomplete="tel"
                 required
                 maxlength="10"
                 pattern="[0-9]{10}"
             >
 
 
-            <label>Select Test</label>
+            <label for="test">
+                Select Test
+            </label>
 
-            <select name="test" required>
+            <select
+                id="test"
+                name="test"
+                required
+            >
 
                 <option value="">
                     Select Test
@@ -1461,20 +1943,68 @@ a {
             </select>
 
 
-            <label>Preferred Date</label>
+            <label for="date">
+                Preferred Date
+            </label>
 
             <input
+                id="date"
                 type="date"
                 name="date"
                 required
             >
 
 
-            <button type="submit">
+            <button
+                type="submit"
+                id="submitButton"
+            >
                 🧪 Confirm Test Booking
             </button>
 
         </form>
+
+    </div>
+
+
+    <!-- SUCCESS SCREEN -->
+
+    <div
+        class="booking-success"
+        id="bookingSuccess"
+    >
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h2>
+            Booking Received!
+        </h2>
+
+        <p>
+            Thank you for booking with
+            MOTI Diagnostics Centre.
+            Our team will contact you for confirmation.
+        </p>
+
+        <div class="success-buttons">
+
+            <a
+                href="/"
+                class="success-home"
+            >
+                🏠 Back to Home
+            </a>
+
+            <a
+                href="https://wa.me/919867242848"
+                class="success-whatsapp"
+            >
+                💬 WhatsApp Us
+            </a>
+
+        </div>
 
     </div>
 
@@ -1744,20 +2274,34 @@ a {
 </footer>
 
 
-<!-- ================= MOBILE BAR ================= -->
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+    href="https://wa.me/919867242848"
+    class="whatsapp-float"
+    aria-label="WhatsApp MOTI Diagnostics"
+>
+    💬
+</a>
+
+
+<!-- ================= MOBILE BOTTOM BAR ================= -->
 
 <div class="mobile-bottom-bar">
 
     <a href="tel:+918286289143">
-        📞 Call
+        <span>📞</span>
+        <span>Call</span>
     </a>
 
     <a href="https://wa.me/919867242848">
-        💬 WhatsApp
+        <span>💬</span>
+        <span>WhatsApp</span>
     </a>
 
     <a href="#booking">
-        🧪 Book Test
+        <span>🧪</span>
+        <span>Book Test</span>
     </a>
 
 </div>
@@ -1767,13 +2311,204 @@ a {
 
 <script>
 
-function selectTest(testName) {
+/* =========================
+   MOBILE MENU
+========================= */
 
-    document.querySelector(
-        'select[name="test"]'
-    ).value = testName;
+function toggleMenu() {
+
+    const menu = document.getElementById("navMenu");
+
+    menu.classList.toggle("show");
 
 }
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+function closeMenu() {
+
+    const menu = document.getElementById("navMenu");
+
+    menu.classList.remove("show");
+
+}
+
+
+/* =========================
+   SELECT TEST
+========================= */
+
+function selectTest(testName) {
+
+    const testSelect =
+        document.querySelector(
+            'select[name="test"]'
+        );
+
+    if (testSelect) {
+
+        testSelect.value = testName;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE NUMBER
+========================= */
+
+const mobileInput =
+    document.getElementById("mobile");
+
+if (mobileInput) {
+
+    mobileInput.addEventListener(
+        "input",
+        function () {
+
+            this.value =
+                this.value.replace(
+                    /[^0-9]/g,
+                    ""
+                );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   MINIMUM BOOKING DATE
+========================= */
+
+const dateInput =
+    document.getElementById("date");
+
+if (dateInput) {
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    dateInput.min = today;
+
+}
+
+
+/* =========================
+   BOOKING SUBMIT
+========================= */
+
+const bookingForm =
+    document.getElementById("bookingForm");
+
+if (bookingForm) {
+
+    bookingForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            const submitButton =
+                document.getElementById(
+                    "submitButton"
+                );
+
+            const formData =
+                new FormData(bookingForm);
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                "⏳ Submitting...";
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/",
+                        {
+                            method: "POST",
+                            body: formData
+                        }
+                    );
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Booking failed"
+                    );
+
+                }
+
+                document.getElementById(
+                    "bookingFormBox"
+                ).style.display = "none";
+
+                document.getElementById(
+                    "bookingSuccess"
+                ).style.display = "block";
+
+                document.getElementById(
+                    "bookingSuccess"
+                ).scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+            catch (error) {
+
+                submitButton.disabled = false;
+
+                submitButton.innerHTML =
+                    "🧪 Confirm Test Booking";
+
+                alert(
+                    "Something went wrong. Please try again or contact us on WhatsApp."
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   CLOSE MENU ON OUTSIDE CLICK
+========================= */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const menu =
+            document.getElementById("navMenu");
+
+        const toggle =
+            document.querySelector(".menu-toggle");
+
+        if (
+            menu &&
+            toggle &&
+            !menu.contains(event.target) &&
+            !toggle.contains(event.target)
+        ) {
+
+            menu.classList.remove("show");
+
+        }
+
+    }
+);
 
 </script>
 
@@ -1781,3 +2516,4 @@ function selectTest(testName) {
 </body>
 
 </html>
+```
