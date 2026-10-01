@@ -63,6 +63,10 @@ def contact():
 def tests():
     return render_template("tests.html")
 
+@app.route("/book-test")
+def book_test():
+    return render_template("book_test.html")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
