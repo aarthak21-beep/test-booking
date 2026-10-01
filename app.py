@@ -59,6 +59,10 @@ def booking():
 def contact():
     return render_template("contact.html")
 
+@app.route("/tests")
+def tests():
+    return render_template("tests.html")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
