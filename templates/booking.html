@@ -92,35 +92,55 @@ a {
 }
 
 .logo-o {
-    position: relative;
-    display: inline-block;
+  position:relative;
+  display:inline-flex;
+  width:42px;
+  height:42px;
+  margin:0 2px;
+  align-items:center;
+  justify-content:center;
+  vertical-align:middle;
+}
+
+.logo-ring {
+  width:36px;
+  height:36px;
+  border:5px solid #ffffff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.18),
+    inset 0 0 8px rgba(255,255,255,0.25);
+}
+
+.logo-ring::before {
+  content:"";
+  position:absolute;
+  width:19px;
+  height:19px;
+  border:3px solid #7ed0ff;
+  border-radius:50%;
 }
 
 .logo-pearl {
-    position: absolute;
-
-    width: 14px;
-    height: 14px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #fff7d6 30%,
-            #e8c86c 75%,
-            #c99d36
-        );
-
-    box-shadow:
-        0 1px 5px rgba(0,0,0,0.35),
-        inset 1px 1px 3px rgba(255,255,255,0.9);
+  position:absolute;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle at 30% 25%,
+    #ffffff,
+    #fff7d6 35%,
+    #e8c86c 75%,
+    #c99d36
+  );
+  box-shadow:
+    0 1px 5px rgba(0,0,0,0.35),
+    inset 1px 1px 3px rgba(255,255,255,0.9);
+  z-index:2;
 }
 
 .logo-sub {
@@ -1098,8 +1118,12 @@ a {
         <span class="logo-icon">🔬</span>
 
         <span class="logo-main">
-            M<span class="logo-o">O<span class="logo-pearl"></span></span>TI
-        </span>
+  M<span class="logo-o">
+    <span class="logo-ring">
+      <span class="logo-pearl"></span>
+    </span>
+  </span>TI
+</span>
 
         <span class="logo-sub">
             DIAGNOSTICS CENTRE
