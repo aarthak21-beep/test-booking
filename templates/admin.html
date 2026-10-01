@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Admin</title>
+</head>
+
+<body>
+
+    <h1>Test Booking Admin</h1>
+<h2>Total Bookings: {{ total_bookings }}</h2>
+
+<h2>Today's Bookings: {{ today_bookings }}</h2>
+   <form method="GET" action="/admin">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search name or mobile"
+        value="{{ search }}"
+    >
+
+    <button type="submit">Search</button>
+
+    <a href="/admin">Clear</a>
+
+</form>
+
+<br> <p>
+        <a href="/logout">Logout</a>
+    </p>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Test</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+
+        {% for booking in bookings %}
+
+        <tr>
+            <td>{{ booking[0] }}</td>
+            <td>{{ booking[1] }}</td>
+            <td>{{ booking[2] }}</td>
+            <td>{{ booking[3] }}</td>
+            <td>{{ booking[4] }}</td>
+
+            <td>
+              <a href="/edit/{{ booking[0] }}">
+    <button type="button">Edit</button>
+</a>  <form method="POST"
+                      action="/delete/{{ booking[0] }}"
+                      onsubmit="return confirm('Delete this booking?');">
+
+                    <button type="submit">Delete</button>
+
+                </form>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
