@@ -1,1 +1,460 @@
+```html id="a8m4k2"
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Moti Diagnostics Centre</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9ff;
+            color: #222;
+        }
+
+        /* Header */
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 22px 20px;
+            text-align: center;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        /* Hero */
+
+        .about-hero {
+            max-width: 1050px;
+            margin: 45px auto 25px;
+            padding: 45px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #eaf4ff, #ffffff);
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .about-hero .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .about-hero h2 {
+            margin: 0 0 15px;
+            color: #0056b3;
+            font-size: 32px;
+        }
+
+        .about-hero p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Mission */
+
+        .section {
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #0056b3;
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
+
+        .mission {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+
+        .mission p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Highlights */
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .highlight {
+            background: white;
+            padding: 25px 18px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .highlight:hover {
+            transform: translateY(-4px);
+        }
+
+        .highlight-icon {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .highlight h3 {
+            color: #0056b3;
+            margin: 8px 0;
+        }
+
+        .highlight p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* Services */
+
+        .services {
+            background: #0056b3;
+            color: white;
+            padding: 35px 25px;
+            border-radius: 18px;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .service {
+            background: white;
+            color: #0056b3;
+            padding: 11px 17px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Home Collection */
+
+        .home-collection {
+            background: #eaf4ff;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .home-collection h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        .home-collection p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            margin: 45px auto;
+        }
+
+        .cta h2 {
+            color: #0056b3;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin: 8px;
+            padding: 13px 24px;
+            border-radius: 9px;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-btn.secondary {
+            background: #eaf4ff;
+            color: #0056b3;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #003f87;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 45px;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .about-hero {
+                margin: 25px 15px;
+                padding: 35px 20px;
+            }
+
+            .about-hero h2 {
+                font-size: 26px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<header>
+    <h1>🩺 MOTI DIAGNOSTICS CENTRE</h1>
+</header>
+
+
+<!-- Hero -->
+
+<section class="about-hero">
+
+    <div class="icon">🩺</div>
+
+    <h2>About MOTI Diagnostics Centre</h2>
+
+    <p>
+        MOTI Diagnostics Centre is committed to providing
+        accurate and reliable diagnostic services using
+        advanced medical technology.
+    </p>
+
+</section>
+
+
+<!-- Mission -->
+
+<section class="section">
+
+    <h2 class="section-title">Our Mission</h2>
+
+    <div class="mission">
+
+        <p>
+            Our mission is to deliver accurate diagnosis,
+            timely reports and compassionate patient care.
+            We aim to make quality diagnostic services
+            accessible and convenient for every patient.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Highlights -->
+
+<section class="section">
+
+    <h2 class="section-title">Why Choose MOTI?</h2>
+
+    <div class="highlight-grid">
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🎯</div>
+
+            <h3>Accurate</h3>
+
+            <p>
+                Reliable diagnostic testing with attention
+                to accuracy.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">⚡</div>
+
+            <h3>Fast Reports</h3>
+
+            <p>
+                Timely reports to help you stay informed
+                about your health.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">💙</div>
+
+            <h3>Patient Care</h3>
+
+            <p>
+                A patient-focused approach with
+                compassionate service.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🏠</div>
+
+            <h3>Home Collection</h3>
+
+            <p>
+                Convenient sample collection available
+                at home.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Services -->
+
+<section class="section">
+
+    <div class="services">
+
+        <h2>🧪 Our Diagnostic Services</h2>
+
+        <div class="service-list">
+
+            <span class="service">CBC</span>
+            <span class="service">Blood Sugar</span>
+            <span class="service">Lipid Profile</span>
+            <span class="service">LFT</span>
+            <span class="service">KFT</span>
+            <span class="service">ECG</span>
+            <span class="service">2D Echo</span>
+            <span class="service">X-Ray</span>
+            <span class="service">Ultrasound</span>
+            <span class="service">MRI</span>
+            <span class="service">CT Scan</span>
+            <span class="service">Thyroid Tests</span>
+            <span class="service">Diabetes Tests</span>
+            <span class="service">Hormone Tests</span>
+            <span class="service">Health Packages</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Home Collection -->
+
+<section class="section">
+
+    <div class="home-collection">
+
+        <h2>🚗 Home Sample Collection</h2>
+
+        <p>
+            Can't visit the centre?
+            We offer convenient home sample collection
+            so you can access diagnostic services from
+            the comfort of your home.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>Ready to Book Your Test?</h2>
+
+    <a href="/book-test" class="cta-btn">
+        📅 Book Test
+    </a>
+
+    <a href="/tests" class="cta-btn secondary">
+        🧪 View Tests
+    </a>
+
+</section>
+
+
+<footer>
+
+    © 2026 MOTI Diagnostics Centre |
+    Accurate • Reliable • Caring
+
+</footer>
+
+
+</body>
+
+</html>
+```
 
