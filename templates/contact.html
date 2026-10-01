@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -20,48 +25,71 @@
             color: #222;
         }
 
-        /* Header */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            background: #0056b3;
+            background: linear-gradient(135deg, #0066cc, #004a9f);
             color: white;
-            padding: 22px 20px;
+            padding: 20px 18px;
             text-align: center;
-            border-radius: 0 0 16px 16px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            border-radius: 0 0 22px 22px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16);
         }
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 27px;
             letter-spacing: 1px;
         }
 
-        /* Main */
+        header p {
+            margin: 7px 0 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
 
         .contact-section {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 35px auto;
             padding: 20px;
         }
 
+        /* =========================
+           TITLE
+        ========================= */
+
         .contact-title {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 32px;
+        }
+
+        .contact-title .title-icon {
+            font-size: 42px;
+            margin-bottom: 6px;
         }
 
         .contact-title h2 {
             color: #0056b3;
             font-size: 32px;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         .contact-title p {
             color: #666;
             font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
         }
 
-        /* Cards */
+        /* =========================
+           CONTACT CARDS
+        ========================= */
 
         .contact-grid {
             display: grid;
@@ -71,32 +99,42 @@
 
         .contact-card {
             background: white;
-            padding: 25px 20px;
-            border-radius: 16px;
+            padding: 28px 20px;
+            border-radius: 18px;
             text-align: center;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-            transition: 0.2s;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.07);
+            border: 1px solid #edf3fa;
+            transition: 0.25s ease;
         }
 
         .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.11);
         }
 
         .contact-icon {
-            font-size: 34px;
-            margin-bottom: 10px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 13px;
+            border-radius: 50%;
+            background: #eaf4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 31px;
         }
 
         .contact-card h3 {
             color: #0056b3;
             margin: 5px 0 12px;
+            font-size: 20px;
         }
 
         .contact-card p {
             color: #555;
-            line-height: 1.6;
-            margin: 5px 0;
+            line-height: 1.65;
+            margin: 6px 0;
+            font-size: 15px;
         }
 
         .contact-card a {
@@ -105,90 +143,126 @@
             font-weight: bold;
         }
 
-        /* Action Buttons */
+        /* =========================
+           ACTION BUTTONS
+        ========================= */
 
         .action-buttons {
-            margin-top: 12px;
+            margin-top: 15px;
         }
 
         .action-btn {
             display: inline-block;
-            padding: 9px 15px;
+            padding: 10px 16px;
             margin: 4px;
-            border-radius: 8px;
+            border-radius: 9px;
             background: #0056b3;
             color: white !important;
             text-decoration: none;
             font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
         }
 
         .whatsapp-btn {
             background: #168c45;
         }
 
-        /* Map */
+        /* =========================
+           MAP
+        ========================= */
 
         .map-section {
-            margin-top: 35px;
+            margin-top: 30px;
             background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            border-radius: 18px;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.07);
             text-align: center;
         }
 
         .map-section h2 {
             color: #0056b3;
-            margin-top: 0;
+            margin: 0 0 10px;
+            font-size: 25px;
+        }
+
+        .map-section p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
         }
 
         .map-btn {
             display: inline-block;
-            margin-top: 10px;
-            padding: 12px 22px;
+            margin-top: 18px;
+            padding: 13px 22px;
             background: #0056b3;
             color: white;
             text-decoration: none;
-            border-radius: 9px;
+            border-radius: 10px;
             font-weight: bold;
         }
 
-        /* Home Collection */
+        /* =========================
+           HOME COLLECTION
+        ========================= */
 
         .home-collection {
             margin-top: 25px;
-            background: #eaf4ff;
-            padding: 28px;
-            border-radius: 16px;
+            background: linear-gradient(135deg, #eaf4ff, #ffffff);
+            padding: 30px 20px;
+            border-radius: 18px;
             text-align: center;
+            border: 1px solid #dcecff;
+        }
+
+        .home-collection .collection-icon {
+            font-size: 38px;
         }
 
         .home-collection h2 {
             color: #0056b3;
-            margin-top: 0;
+            margin: 8px 0 10px;
+            font-size: 25px;
         }
 
         .home-collection p {
             color: #555;
             font-size: 16px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
         }
 
-        /* Bottom Buttons */
+        /* =========================
+           BOTTOM BUTTONS
+        ========================= */
 
         .bottom-buttons {
             text-align: center;
-            margin: 35px 0 10px;
+            margin: 32px 0 10px;
         }
 
         .bottom-btn {
             display: inline-block;
             margin: 6px;
-            padding: 12px 22px;
-            border-radius: 9px;
+            padding: 13px 23px;
+            border-radius: 10px;
             background: #0056b3;
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .bottom-btn:hover {
+            transform: translateY(-2px);
         }
 
         .bottom-btn.secondary {
@@ -196,38 +270,173 @@
             color: #0056b3;
         }
 
-        /* Footer */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             margin-top: 40px;
             background: #003f87;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 22px 15px;
             font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* Mobile */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 768px) {
 
-            .contact-section {
-                margin: 20px auto;
-                padding: 15px;
+            header {
+                padding: 17px 15px;
+                border-radius: 0 0 18px 18px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
+            header h1 {
+                font-size: 21px;
+                letter-spacing: 0.7px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+
+            .contact-section {
+                margin: 20px auto;
+                padding: 12px;
+            }
+
+            .contact-title {
+                margin-bottom: 25px;
+            }
+
+            .contact-title .title-icon {
+                font-size: 36px;
             }
 
             .contact-title h2 {
                 font-size: 26px;
+                margin-bottom: 8px;
             }
 
-            header h1 {
+            .contact-title p {
+                font-size: 14px;
+                padding: 0 8px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-card {
+                padding: 24px 18px;
+                border-radius: 16px;
+            }
+
+            .contact-icon {
+                width: 58px;
+                height: 58px;
+                font-size: 28px;
+            }
+
+            .contact-card h3 {
+                font-size: 19px;
+            }
+
+            .contact-card p {
+                font-size: 14px;
+            }
+
+            .action-buttons {
+                margin-top: 13px;
+            }
+
+            .action-btn {
+                width: calc(100% - 8px);
+                padding: 11px 10px;
+                margin: 4px;
+            }
+
+            .map-section {
+                margin-top: 20px;
+                padding: 25px 16px;
+                border-radius: 16px;
+            }
+
+            .map-section h2 {
+                font-size: 23px;
+            }
+
+            .map-section p {
+                font-size: 14px;
+            }
+
+            .map-btn {
+                width: 100%;
+                padding: 13px 10px;
+            }
+
+            .home-collection {
+                margin-top: 18px;
+                padding: 25px 17px;
+                border-radius: 16px;
+            }
+
+            .home-collection h2 {
                 font-size: 22px;
             }
 
+            .home-collection p {
+                font-size: 14px;
+            }
+
+            .bottom-buttons {
+                margin: 25px 0 5px;
+            }
+
+            .bottom-btn {
+                display: block;
+                width: 100%;
+                margin: 8px 0;
+                padding: 13px 10px;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding: 20px 12px;
+                font-size: 13px;
+            }
+        }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            header h1 {
+                font-size: 19px;
+            }
+
+            .contact-title h2 {
+                font-size: 24px;
+            }
+
+            .contact-card {
+                padding: 22px 15px;
+            }
+
+            .contact-card h3 {
+                font-size: 18px;
+            }
+
+            .home-collection h2 {
+                font-size: 20px;
+            }
         }
 
     </style>
@@ -237,15 +446,24 @@
 <body>
 
 <header>
+
     <h1>MOTI DIAGNOSTICS CENTRE</h1>
+
+    <p>Accurate • Reliable • Caring</p>
+
 </header>
 
 
 <section class="contact-section">
 
+
+    <!-- TITLE -->
+
     <div class="contact-title">
 
-        <h2>📞 Contact Us</h2>
+        <div class="title-icon">📞</div>
+
+        <h2>Contact Us</h2>
 
         <p>
             We are here to help you with your diagnostic needs.
@@ -254,10 +472,12 @@
     </div>
 
 
+    <!-- CONTACT CARDS -->
+
     <div class="contact-grid">
 
 
-        <!-- Address -->
+        <!-- ADDRESS -->
 
         <div class="contact-card">
 
@@ -286,7 +506,7 @@
         </div>
 
 
-        <!-- Call -->
+        <!-- CALL -->
 
         <div class="contact-card">
 
@@ -314,7 +534,7 @@
         </div>
 
 
-        <!-- WhatsApp -->
+        <!-- WHATSAPP -->
 
         <div class="contact-card">
 
@@ -343,7 +563,7 @@
         </div>
 
 
-        <!-- Email -->
+        <!-- EMAIL -->
 
         <div class="contact-card">
 
@@ -371,7 +591,7 @@
         </div>
 
 
-        <!-- Working Hours -->
+        <!-- WORKING HOURS -->
 
         <div class="contact-card">
 
@@ -392,7 +612,7 @@
         </div>
 
 
-        <!-- Services -->
+        <!-- SERVICES -->
 
         <div class="contact-card">
 
@@ -410,7 +630,7 @@
     </div>
 
 
-    <!-- Map -->
+    <!-- MAP -->
 
     <div class="map-section">
 
@@ -431,11 +651,13 @@
     </div>
 
 
-    <!-- Home Collection -->
+    <!-- HOME COLLECTION -->
 
     <div class="home-collection">
 
-        <h2>🚗 Home Sample Collection</h2>
+        <div class="collection-icon">🚗</div>
+
+        <h2>Home Sample Collection</h2>
 
         <p>
             Can't visit the centre?
@@ -446,15 +668,21 @@
     </div>
 
 
-    <!-- Bottom -->
+    <!-- BOTTOM BUTTONS -->
 
     <div class="bottom-buttons">
 
-        <a href="/book-test" class="bottom-btn">
+        <a
+            href="/book-test"
+            class="bottom-btn"
+        >
             📅 Book Your Test
         </a>
 
-        <a href="/" class="bottom-btn secondary">
+        <a
+            href="/"
+            class="bottom-btn secondary"
+        >
             🏠 Back to Home
         </a>
 
@@ -466,7 +694,7 @@
 
 <footer>
 
-    © 2026 MOTI Diagnostics Centre |
+    © 2026 MOTI Diagnostics Centre<br>
     Accurate • Reliable • Caring
 
 </footer>
@@ -475,3 +703,4 @@
 </body>
 
 </html>
+```
