@@ -1,1 +1,363 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Tests | Moti Diagnostics Centre</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9ff;
+            color: #222;
+        }
+
+        /* Header */
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 18px 30px;
+            text-align: center;
+            border-radius: 0 0 14px 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        /* Main */
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #0056b3;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* Category */
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 18px;
+            border-left: 5px solid #0056b3;
+            padding-left: 12px;
+        }
+
+        /* Cards */
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .test-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.12);
+        }
+
+        .test-card h3 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .book-btn {
+            display: inline-block;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .book-btn:hover {
+            background: #003f87;
+        }
+
+        /* Home Sample */
+
+        .home-sample {
+            background: #eaf4ff;
+            padding: 25px;
+            border-radius: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .home-sample h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        /* Back */
+
+        .back-home {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 10px;
+            padding: 12px 24px;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .intro h2 {
+                font-size: 25px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 MOTI DIAGNOSTICS CENTRE</h1>
+</header>
+
+
+<div class="container">
+
+    <div class="intro">
+
+        <h2>🩸 Our Diagnostics Tests</h2>
+
+        <p>
+            We offer a wide range of accurate diagnostic tests
+            at affordable prices.
+        </p>
+
+    </div>
+
+
+    <!-- Blood Tests -->
+
+    <div class="category">
+
+        <h2 class="category-title">🩸 Blood Tests</h2>
+
+        <div class="test-grid">
+
+            <div class="test-card">
+                <h3>CBC</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Blood Sugar</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Lipid Profile</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Liver Function Test (LFT)</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Kidney Function Test (KFT)</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Heart Tests -->
+
+    <div class="category">
+
+        <h2 class="category-title">❤️ Heart Tests</h2>
+
+        <div class="test-grid">
+
+            <div class="test-card">
+                <h3>ECG</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>2D Echo</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Imaging -->
+
+    <div class="category">
+
+        <h2 class="category-title">🩻 Imaging</h2>
+
+        <div class="test-grid">
+
+            <div class="test-card">
+                <h3>X-Ray</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Ultrasound</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>MRI</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>CT Scan</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Special Tests -->
+
+    <div class="category">
+
+        <h2 class="category-title">🦋 Special Tests</h2>
+
+        <div class="test-grid">
+
+            <div class="test-card">
+                <h3>Thyroid Tests</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Diabetes Tests</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Hormone Tests</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Health Packages -->
+
+    <div class="category">
+
+        <h2 class="category-title">🏥 Health Packages</h2>
+
+        <div class="test-grid">
+
+            <div class="test-card">
+                <h3>Basic Health Checkup</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+            <div class="test-card">
+                <h3>Full Body Checkup</h3>
+                <a href="/#booking" class="book-btn">Book Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Home Sample Collection -->
+
+    <div class="home-sample">
+
+        <h2>🚗 Home Sample Collection</h2>
+
+        <p>
+            Home Sample Collection is Available.
+        </p>
+
+    </div>
+
+
+    <a href="/" class="back-home">
+        🏠 Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>
+```
 
