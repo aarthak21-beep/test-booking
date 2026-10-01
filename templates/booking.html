@@ -65,17 +65,22 @@
     font-weight: 600;
     }
     .logo-pearl {
+    display: inline-block;
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #d9b85c;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: -18px;
-    margin-right: 10px;
-    position: relative;
+    background: radial-gradient(circle at 30% 30%, #fffdf2, #f7e7b0, #d9b85c);
+    box-shadow: 0 1px 4px rgba(120,85,20,0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
-    );
+}
+        .logo-o {
+    position: relative;
+    display: inline-block;
+}
     box-shadow:
         inset 2px 2px 5px rgba(255,255,255,0.9),
         0 2px 7px rgba(120,85,20,0.35);
