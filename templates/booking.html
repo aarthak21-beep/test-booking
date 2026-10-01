@@ -1,617 +1,1087 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MOTI DIAGNOSTICS CENTRE</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f9ff;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        /* ================= HEADER ================= */
-
-        .header {
-            background: linear-gradient(135deg, #004b99, #0074d9);
-            padding: 14px 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid #003d7a;
-            box-shadow: 0 5px 20px rgba(0, 61, 122, 0.22);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            color: white;
-            white-space: nowrap;
-        }
-
-        .logo-icon {
-            font-size: 30px;
-        }
-
-        .logo-main {
-            position: relative;
-            font-size: 38px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            line-height: 1;
-        }
-
-        .logo-o {
-            position: relative;
-            display: inline-block;
-        }
-
-        .logo-pearl {
-            display: inline-block;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: radial-gradient(
-                circle at 30% 30%,
-                #ffffff,
-                #f8e9b5,
-                #d8b65a
-            );
-            box-shadow:
-                0 1px 5px rgba(80, 55, 10, 0.45),
-                inset 1px 1px 2px rgba(255,255,255,0.9);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-
-        .logo-sub {
-            font-size: 13px;
-            letter-spacing: 1.2px;
-            font-weight: 700;
-            margin-left: 2px;
-            margin-top: 4px;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            padding: 9px 11px;
-            border-radius: 8px;
-            transition: 0.25s;
-        }
-
-        .nav-menu a:hover {
-            background: white;
-            color: #0056b3;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding: 100px 20px;
-            background:
-                radial-gradient(
-                    circle at 85% 15%,
-                    rgba(0, 119, 255, 0.15),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 10% 80%,
-                    rgba(0, 180, 255, 0.10),
-                    transparent 28%
-                ),
-                linear-gradient(135deg, #eaf5ff, #ffffff);
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            color: #0056b3;
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-
-        .hero p {
-            max-width: 720px;
-            margin: auto;
-            font-size: 19px;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        .buttons {
-            margin-top: 35px;
-        }
-
-        .book-btn,
-        .whatsapp-btn,
-        .contact-btn {
-            display: inline-block;
-            color: white;
-            padding: 15px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: bold;
-            margin: 6px;
-            transition: 0.25s;
-        }
-
-        .book-btn {
-            background: #0066cc;
-            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.25);
-        }
-
-        .whatsapp-btn {
-            background: #25D366;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.22);
-        }
-
-        .contact-btn {
-            background: #0b78b8;
-        }
-
-        .book-btn:hover,
-        .whatsapp-btn:hover,
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 9px 20px rgba(0,0,0,0.16);
-        }
-
-        /* ================= SECTION COMMON ================= */
-
-        .section-text {
-            max-width: 650px;
-            margin: 0 auto 38px;
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* ================= TESTS ================= */
-
-        .tests {
-            padding: 75px 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .tests h2,
-        .booking-section h2,
-        .why-section h2,
-        .contact-section h2 {
-            color: #0056b3;
-            font-size: 34px;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .test-container {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .test-card {
-            background: linear-gradient(145deg, #ffffff, #f2f8ff);
-            padding: 28px 22px;
-            border-radius: 16px;
-            border: 1px solid #e2efff;
-            box-shadow: 0 5px 18px rgba(0, 75, 153, 0.08);
-            transition: 0.25s;
-        }
-
-        .test-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 75, 153, 0.14);
-        }
-
-        .test-card h3 {
-            color: #0056b3;
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-
-        .test-card p {
-            color: #666;
-            line-height: 1.6;
-            min-height: 75px;
-        }
-
-        .test-btn {
-            display: inline-block;
-            margin-top: 15px;
-            background: #0066cc;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .test-btn:hover {
-            background: #004f9e;
-            transform: translateY(-2px);
-        }
-
-        /* ================= BOOKING ================= */
-
-        .booking-section {
-            padding: 80px 20px;
-            background:
-                linear-gradient(
-                    135deg,
-                    #eef7ff,
-                    #f8fbff
-                );
-            text-align: center;
-        }
-
-        .booking-form {
-            max-width: 580px;
-            margin: 30px auto 0;
-            background: white;
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(0, 75, 153, 0.12);
-            border: 1px solid #e1efff;
-            text-align: left;
-        }
-
-        .booking-form label {
-            display: block;
-            margin-top: 17px;
-            margin-bottom: 7px;
-            font-weight: 700;
-            color: #333;
-        }
-
-        .booking-form input,
-        .booking-form select {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #d8e4f0;
-            border-radius: 9px;
-            font-size: 16px;
-            outline: none;
-            transition: 0.2s;
-            background: #fbfdff;
-        }
-
-        .booking-form input:focus,
-        .booking-form select:focus {
-            border-color: #0074d9;
-            box-shadow: 0 0 0 3px rgba(0,116,217,0.10);
-        }
-
-        .booking-form button {
-            width: 100%;
-            margin-top: 28px;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #0066cc, #007ee5);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .booking-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,102,204,0.22);
-        }
-
-        /* ================= WHY CHOOSE US ================= */
-
-        .why-section {
-            padding: 80px 20px;
-            background: white;
-            text-align: center;
-        }
-
-        .why-container {
-            max-width: 1100px;
-            margin: 40px auto 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .why-card {
-            padding: 30px 20px;
-            background: #f7fbff;
-            border-radius: 16px;
-            border: 1px solid #e3effb;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: 0.25s;
-        }
-
-        .why-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,75,153,0.11);
-        }
-
-        .why-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .why-card h3 {
-            color: #0056b3;
-            margin-bottom: 8px;
-        }
-
-        .why-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* ================= CONTACT ================= */
-
-        .contact-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #e8f4ff, #f8fcff);
-        }
-
-        .contact-buttons {
-            margin-top: 30px;
-        }
-
-        .contact-call,
-        .contact-whatsapp {
-            display: inline-block;
-            padding: 15px 28px;
-            margin: 6px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 17px;
-            transition: 0.25s;
-        }
-
-        .contact-call {
-            background: #0066cc;
-        }
-
-        .contact-whatsapp {
-            background: #25D366;
-        }
-
-        .contact-call:hover,
-        .contact-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.14);
-        }
-
-        /* ================= CONTACT DETAILS ================= */
-
-        .contact-card {
-            max-width: 1000px;
-            margin: 35px auto 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .contact-item {
-            background: white;
-            padding: 22px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
-
-        .contact-item h3 {
-            color: #0056b3;
-            margin-bottom: 8px;
-        }
-
-        .contact-item a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* ================= FOOTER ================= */
-
-        .footer {
-            background: linear-gradient(135deg, #003b73, #002b55);
-            color: white;
-            text-align: center;
-            padding: 45px 20px 28px;
-        }
-
-        .footer h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
-
-        .footer p {
-            margin: 7px 0;
-            opacity: 0.9;
-        }
-
-        .footer-line {
-            max-width: 600px;
-            margin: 25px auto 15px;
-            border-top: 1px solid rgba(255,255,255,0.25);
-        }
-
-        .copyright {
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        /* ================= MOBILE BOTTOM BAR ================= */
-
-        .mobile-bottom-bar {
-            display: none;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 900px) {
-
-            .header {
-                padding: 12px 15px;
-            }
-
-            .nav-menu {
-                gap: 3px;
-            }
-
-            .nav-menu a {
-                font-size: 13px;
-                padding: 8px;
-            }
-
-            .test-container,
-            .why-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-card {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            .header {
-                position: relative;
-                flex-direction: column;
-                gap: 15px;
-                border-radius: 0;
-            }
-
-            .logo {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .logo-main {
-                font-size: 34px;
-            }
-
-            .nav-menu {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .nav-menu a {
-                font-size: 12px;
-                padding: 7px 8px;
-            }
-
-            .hero {
-                padding: 65px 18px;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .book-btn,
-            .whatsapp-btn,
-            .contact-btn {
-                display: block;
-                max-width: 300px;
-                margin: 10px auto;
-            }
-
-            .tests,
-            .booking-section,
-            .why-section,
-            .contact-section {
-                padding: 60px 18px;
-            }
-
-            .tests h2,
-            .booking-section h2,
-            .why-section h2,
-            .contact-section h2 {
-                font-size: 28px;
-            }
-
-            .test-container,
-            .why-container,
-            .contact-card {
-                grid-template-columns: 1fr;
-            }
-
-            .booking-form {
-                padding: 25px 20px;
-            }
-
-            .mobile-bottom-bar {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 9999;
-                background: white;
-                padding: 8px;
-                box-shadow: 0 -4px 15px rgba(0,0,0,0.14);
-            }
-
-            .mobile-bottom-bar a {
-                flex: 1;
-                text-align: center;
-                text-decoration: none;
-                padding: 10px 4px;
-                font-size: 13px;
-                font-weight: 600;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MOTI DIAGNOSTICS CENTRE</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f9ff;
+    color: #1d2939;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 82px;
+    padding: 12px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        135deg,
+        #003b7a,
+        #0066c7,
+        #0085e8
+    );
+
+    border-bottom: 3px solid #00346b;
+
+    box-shadow:
+        0 5px 22px rgba(0, 61, 122, 0.25);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 31px;
+}
+
+.logo-main {
+    position: relative;
+    font-size: 39px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo-o {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-pearl {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #fff7d6 30%,
+            #e8c86c 75%,
+            #c99d36
+        );
+
+    box-shadow:
+        0 1px 5px rgba(0,0,0,0.35),
+        inset 1px 1px 3px rgba(255,255,255,0.9);
+}
+
+.logo-sub {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-menu a {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 9px 11px;
+
+    border-radius: 9px;
+
+    transition: 0.25s;
+}
+
+.nav-menu a:hover {
+    background: white;
+    color: #0056b3;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 119, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(0, 174, 239, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e9f5ff,
+            #ffffff
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #0066c7;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 18px rgba(0,75,153,0.10);
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.15;
+
+    color: #004f9e;
+
+    font-weight: 900;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #0084df;
+}
+
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #536273;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.buttons {
+    margin-top: 35px;
+}
+
+.book-btn,
+.whatsapp-btn,
+.contact-btn {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    margin: 6px;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.book-btn {
+    background: linear-gradient(
+        135deg,
+        #005fc4,
+        #0086eb
+    );
+
+    box-shadow:
+        0 7px 20px rgba(0,102,204,0.25);
+}
+
+.whatsapp-btn {
+    background: #20c866;
+
+    box-shadow:
+        0 7px 20px rgba(32,200,102,0.20);
+}
+
+.contact-btn {
+    background: #0b78b8;
+}
+
+.book-btn:hover,
+.whatsapp-btn:hover,
+.contact-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.16);
+}
+
+
+/* =========================
+   TRUST STRIP
+========================= */
+
+.trust-strip {
+    max-width: 1050px;
+
+    margin: -45px auto 0;
+
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0,65,130,0.13);
+
+    overflow: hidden;
+}
+
+.trust-item {
+    padding: 24px 15px;
+
+    text-align: center;
+
+    border-right: 1px solid #edf2f7;
+}
+
+.trust-item:last-child {
+    border-right: none;
+}
+
+.trust-icon {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.trust-item strong {
+    display: block;
+
+    color: #0056b3;
+
+    font-size: 16px;
+}
+
+.trust-item small {
+    color: #697586;
+}
+
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+.section {
+    padding: 85px 20px;
+}
+
+.section-white {
+    background: white;
+}
+
+.section-blue {
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ff,
+            #f9fcff
+        );
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    color: #0056b3;
+
+    font-size: 36px;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #697586;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   POPULAR TESTS
+========================= */
+
+.test-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.test-card {
+    position: relative;
+
+    padding: 30px 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f4f9ff
+        );
+
+    border: 1px solid #e1edfa;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 22px rgba(0,75,153,0.07);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.test-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0066cc,
+            #00a4ef
+        );
+}
+
+.test-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(0,75,153,0.14);
+}
+
+.test-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 15px;
+
+    background: #e8f4ff;
+
+    font-size: 27px;
+}
+
+.test-card h3 {
+    color: #0056b3;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.test-card p {
+    color: #667085;
+
+    min-height: 75px;
+
+    font-size: 15px;
+}
+
+.test-btn {
+    display: inline-block;
+
+    margin-top: 16px;
+
+    padding: 10px 20px;
+
+    border-radius: 9px;
+
+    background: #0066cc;
+
+    color: white;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.test-btn:hover {
+    background: #004f9e;
+}
+
+
+/* =========================
+   HOME COLLECTION
+========================= */
+
+.collection-box {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0056b3,
+            #0088e8
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 35px rgba(0,75,153,0.20);
+}
+
+.collection-box h2 {
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.collection-box p {
+    opacity: 0.92;
+
+    font-size: 17px;
+}
+
+.collection-points {
+    display: grid;
+
+    gap: 12px;
+}
+
+.collection-point {
+    padding: 13px 16px;
+
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.13);
+
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-section {
+    padding: 85px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #f9fcff
+        );
+}
+
+.booking-form {
+    max-width: 590px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 38px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e1edf8;
+
+    box-shadow:
+        0 15px 40px rgba(0,75,153,0.12);
+}
+
+.booking-form label {
+    display: block;
+
+    margin-top: 17px;
+    margin-bottom: 7px;
+
+    color: #344054;
+
+    font-weight: 700;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #d8e3ee;
+
+    border-radius: 10px;
+
+    background: #fbfdff;
+
+    color: #1d2939;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #0075d4;
+
+    box-shadow:
+        0 0 0 4px rgba(0,117,212,0.10);
+}
+
+.booking-form button {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #005fc4,
+            #0086eb
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.booking-form button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(0,102,204,0.20);
+}
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.why-card {
+    text-align: center;
+
+    padding: 32px 20px;
+
+    background: #f8fbff;
+
+    border: 1px solid #e3eef9;
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 25px rgba(0,75,153,0.10);
+}
+
+.why-icon {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.why-card h3 {
+    color: #0056b3;
+
+    margin-bottom: 8px;
+}
+
+.why-card p {
+    color: #667085;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.questions {
+    text-align: center;
+
+    padding: 75px 20px;
+
+    background: white;
+}
+
+.questions h2 {
+    color: #0056b3;
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.questions p {
+    color: #667085;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.contact-item {
+    padding: 24px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    border: 1px solid #e3edf7;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.05);
+}
+
+.contact-item h3 {
+    color: #0056b3;
+
+    margin-bottom: 8px;
+}
+
+.contact-item p {
+    color: #667085;
+}
+
+.contact-item a {
+    color: #0066cc;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 48px 20px 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #002f61,
+            #004984
+        );
+
+    color: white;
+}
+
+.footer h3 {
+    font-size: 26px;
+
+    margin-bottom: 8px;
+}
+
+.footer p {
+    opacity: 0.88;
+
+    margin: 7px 0;
+}
+
+.footer-line {
+    max-width: 600px;
+
+    margin: 25px auto 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.25);
+}
+
+.copyright {
+    font-size: 13px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   MOBILE BOTTOM BAR
+========================= */
+
+.mobile-bottom-bar {
+    display: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .nav-menu {
+        gap: 2px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .test-container,
+    .why-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-strip {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .header {
+        position: relative;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px 10px;
+
+        border-radius: 0;
+    }
+
+    .logo {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-main {
+        font-size: 34px;
+    }
+
+    .nav-menu {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+
+        padding: 7px 8px;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 65px 18px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .book-btn,
+    .whatsapp-btn,
+    .contact-btn {
+        display: block;
+
+        max-width: 300px;
+
+        margin: 10px auto;
+    }
+
+    .trust-strip {
+        margin: -25px 15px 0;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trust-item {
+        border-bottom: 1px solid #edf2f7;
+    }
+
+    .section,
+    .booking-section {
+        padding: 65px 18px;
+    }
+
+    .section-heading h2,
+    .questions h2 {
+        font-size: 29px;
+    }
+
+    .test-container,
+    .why-container,
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-box {
+        grid-template-columns: 1fr;
+
+        padding: 30px 23px;
+    }
+
+    .collection-box h2 {
+        font-size: 28px;
+    }
+
+    .booking-form {
+        padding: 27px 20px;
+    }
+
+    .mobile-bottom-bar {
+        display: flex;
+
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 9999;
+
+        background: white;
+
+        padding: 8px;
+
+        box-shadow:
+            0 -4px 18px rgba(0,0,0,0.15);
+    }
+
+    .mobile-bottom-bar a {
+        flex: 1;
+
+        text-align: center;
+
+        padding: 10px 3px;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        color: #0056b3;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .logo-main {
+        font-size: 31px;
+    }
+
+    .logo-sub {
+        font-size: 10px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -661,50 +1131,118 @@
 
 <section class="hero">
 
-    <h1>
-        Your Health, Our Priority
-    </h1>
+    <div class="hero-content">
 
-    <p>
-        Reliable diagnostic testing with accurate reports,
-        modern technology and convenient home sample collection.
-    </p>
+        <div class="hero-badge">
+            🧬 Trusted Diagnostic Care
+        </div>
 
-    <div class="buttons">
+        <h1>
+            Your Health,
+            <span>Our Priority</span>
+        </h1>
 
-        <a class="book-btn" href="#booking">
-            🧪 Book Your Test
-        </a>
+        <p>
+            Reliable diagnostic testing with accurate reports,
+            modern technology and convenient home sample collection.
+            Your health journey starts with better diagnostics.
+        </p>
 
-        <a class="whatsapp-btn"
-           href="https://wa.me/919867242848">
-            💬 WhatsApp Enquiry
-        </a>
 
-        <a class="contact-btn" href="/contact">
-            📞 Contact Us
-        </a>
+        <div class="buttons">
+
+            <a class="book-btn" href="#booking">
+                🧪 Book Your Test
+            </a>
+
+            <a class="whatsapp-btn"
+               href="https://wa.me/919867242848">
+                💬 WhatsApp Enquiry
+            </a>
+
+            <a class="contact-btn" href="/contact">
+                📞 Contact Us
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- ================= TRUST STRIP ================= -->
+
+<div class="trust-strip">
+
+    <div class="trust-item">
+
+        <div class="trust-icon">🎯</div>
+
+        <strong>Accurate Testing</strong>
+
+        <small>Quality focused</small>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">🏠</div>
+
+        <strong>Home Collection</strong>
+
+        <small>At your convenience</small>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">⚡</div>
+
+        <strong>Fast Reports</strong>
+
+        <small>Convenient delivery</small>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">👨‍⚕️</div>
+
+        <strong>Patient Care</strong>
+
+        <small>Dedicated service</small>
+
+    </div>
+
+</div>
+
+
 <!-- ================= POPULAR TESTS ================= -->
 
-<section class="tests">
+<section class="section section-white">
 
-    <h2>Our Popular Tests</h2>
+    <div class="section-heading">
 
-    <p class="section-text">
-        Choose from our commonly requested diagnostic tests.
-    </p>
+        <h2>Popular Diagnostic Tests</h2>
+
+        <p>
+            Choose from commonly requested diagnostic tests
+            and book your appointment easily.
+        </p>
+
+    </div>
 
 
     <div class="test-container">
 
 
         <div class="test-card">
+
+            <div class="test-icon">🩸</div>
 
             <h3>CBC</h3>
 
@@ -716,13 +1254,15 @@
             <a href="#booking"
                class="test-btn"
                onclick="selectTest('CBC')">
-                Book Now
+                Book Now →
             </a>
 
         </div>
 
 
         <div class="test-card">
+
+            <div class="test-icon">❤️</div>
 
             <h3>Lipid Profile</h3>
 
@@ -734,13 +1274,15 @@
             <a href="#booking"
                class="test-btn"
                onclick="selectTest('Lipid Profile')">
-                Book Now
+                Book Now →
             </a>
 
         </div>
 
 
         <div class="test-card">
+
+            <div class="test-icon">🧪</div>
 
             <h3>Liver Function Test</h3>
 
@@ -752,13 +1294,15 @@
             <a href="#booking"
                class="test-btn"
                onclick="selectTest('Liver Function Test')">
-                Book Now
+                Book Now →
             </a>
 
         </div>
 
 
         <div class="test-card">
+
+            <div class="test-icon">💧</div>
 
             <h3>Kidney Function Test</h3>
 
@@ -770,7 +1314,7 @@
             <a href="#booking"
                class="test-btn"
                onclick="selectTest('Kidney Function Test')">
-                Book Now
+                Book Now →
             </a>
 
         </div>
@@ -781,15 +1325,62 @@
 </section>
 
 
+<!-- ================= HOME COLLECTION ================= -->
+
+<section class="section section-blue">
+
+    <div class="collection-box">
+
+        <div>
+
+            <h2>
+                🏠 Home Sample Collection
+            </h2>
+
+            <p>
+                Can't visit the centre?
+                Our home sample collection service
+                brings convenient diagnostic care to you.
+            </p>
+
+        </div>
+
+
+        <div class="collection-points">
+
+            <div class="collection-point">
+                ✓ Convenient home visit
+            </div>
+
+            <div class="collection-point">
+                ✓ Easy appointment booking
+            </div>
+
+            <div class="collection-point">
+                ✓ Online reports available
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- ================= BOOKING ================= -->
 
 <section class="booking-section" id="booking">
 
-    <h2>Book Your Test</h2>
+    <div class="section-heading">
 
-    <p class="section-text">
-        Fill in your details and we will contact you for confirmation.
-    </p>
+        <h2>Book Your Test</h2>
+
+        <p>
+            Fill in your details and we will contact you
+            for confirmation.
+        </p>
+
+    </div>
 
 
     <div class="booking-form">
@@ -812,7 +1403,7 @@
             <input
                 type="tel"
                 name="mobile"
-                placeholder="Enter your mobile number"
+                placeholder="Enter your 10-digit mobile number"
                 required
                 maxlength="10"
                 pattern="[0-9]{10}"
@@ -856,7 +1447,7 @@
 
 
             <button type="submit">
-                🧪 Book Test
+                🧪 Confirm Test Booking
             </button>
 
         </form>
@@ -868,16 +1459,18 @@
 
 <!-- ================= WHY CHOOSE US ================= -->
 
-<section class="why-section">
+<section class="section section-white">
 
-    <h2>
-        Why Choose MOTI Diagnostics Centre?
-    </h2>
+    <div class="section-heading">
 
-    <p class="section-text">
-        We are committed to providing reliable and convenient
-        diagnostic services for you and your family.
-    </p>
+        <h2>Why Choose MOTI?</h2>
+
+        <p>
+            Reliable service designed around
+            your comfort and convenience.
+        </p>
+
+    </div>
 
 
     <div class="why-container">
@@ -908,7 +1501,7 @@
             </div>
 
             <h3>
-                Home Sample Collection
+                Home Collection
             </h3>
 
             <p>
@@ -926,7 +1519,7 @@
             </div>
 
             <h3>
-                Fast Report Delivery
+                Fast Reports
             </h3>
 
             <p>
@@ -940,16 +1533,16 @@
         <div class="why-card">
 
             <div class="why-icon">
-                👨‍⚕️
+                ❤️
             </div>
 
             <h3>
-                Experienced Staff
+                Patient Care
             </h3>
 
             <p>
-                Dedicated staff focused on
-                patient care and service.
+                Dedicated service focused on
+                patient comfort and care.
             </p>
 
         </div>
@@ -962,23 +1555,23 @@
 
 <!-- ================= QUESTIONS ================= -->
 
-<section class="contact-section">
+<section class="questions">
 
     <h2>
-        Have Questions?
+        Need Help?
     </h2>
 
-    <p class="section-text">
-        Need help choosing a test or want to know more?
-        Get in touch with us.
+    <p>
+        Have questions about a test or booking?
+        Our team is ready to help.
     </p>
 
 
-    <div class="contact-buttons">
+    <div class="buttons">
 
         <a
             href="tel:+918286289143"
-            class="contact-call"
+            class="book-btn"
         >
             📞 Call Now
         </a>
@@ -986,7 +1579,7 @@
 
         <a
             href="https://wa.me/919867242848"
-            class="contact-whatsapp"
+            class="whatsapp-btn"
         >
             💬 WhatsApp Us
         </a>
@@ -996,13 +1589,20 @@
 </section>
 
 
-<!-- ================= CONTACT DETAILS ================= -->
+<!-- ================= CONTACT ================= -->
 
-<section class="contact-section">
+<section class="section section-blue">
 
-    <h2>
-        📞 Contact Us
-    </h2>
+    <div class="section-heading">
+
+        <h2>Contact MOTI Diagnostics</h2>
+
+        <p>
+            We're here to make your diagnostic experience
+            simple and convenient.
+        </p>
+
+    </div>
 
 
     <div class="contact-card">
@@ -1010,9 +1610,7 @@
 
         <div class="contact-item">
 
-            <h3>
-                📍 Address
-            </h3>
+            <h3>📍 Address</h3>
 
             <p>
                 Shanti Garden, Mira Road (E),
@@ -1024,9 +1622,7 @@
 
         <div class="contact-item">
 
-            <h3>
-                📞 Call
-            </h3>
+            <h3>📞 Call</h3>
 
             <p>
                 <a href="tel:+918286289143">
@@ -1039,9 +1635,7 @@
 
         <div class="contact-item">
 
-            <h3>
-                💬 WhatsApp
-            </h3>
+            <h3>💬 WhatsApp</h3>
 
             <p>
                 <a href="https://wa.me/919867242848">
@@ -1054,9 +1648,7 @@
 
         <div class="contact-item">
 
-            <h3>
-                📧 Email
-            </h3>
+            <h3>📧 Email</h3>
 
             <p>
                 <a href="mailto:motidiagnostics@gmail.com">
@@ -1069,13 +1661,13 @@
 
         <div class="contact-item">
 
-            <h3>
-                🕒 Working Hours
-            </h3>
+            <h3>🕒 Working Hours</h3>
 
             <p>
                 Monday – Saturday<br>
-                7:00 AM – 9:00 PM
+                7:00 AM – 9:00 PM<br><br>
+                Sunday<br>
+                7:00 AM – 2:00 PM
             </p>
 
         </div>
@@ -1083,9 +1675,7 @@
 
         <div class="contact-item">
 
-            <h3>
-                🚗 Services
-            </h3>
+            <h3>🚗 Services</h3>
 
             <p>
                 Home Sample Collection<br>
@@ -1113,7 +1703,11 @@
     </p>
 
     <p>
-        📞 Call us for test booking and enquiries
+        📍 Shanti Garden, Mira Road (E), Thane – 401107
+    </p>
+
+    <p>
+        📞 +91 8286289143
     </p>
 
     <div class="footer-line"></div>
@@ -1126,7 +1720,7 @@
 </footer>
 
 
-<!-- ================= MOBILE BOTTOM BAR ================= -->
+<!-- ================= MOBILE BAR ================= -->
 
 <div class="mobile-bottom-bar">
 
