@@ -414,28 +414,50 @@
     margin-bottom: 25px;
 }
 
+.contact-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
 .contact-section p {
-    margin: 10px 0;
+    margin: 0;
     line-height: 1.5;
 }
 
-.contact-section a {
+.contact-section .contact-item,
+.contact-section .contact-services {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.contact-section .contact-item h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.contact-section .contact-item a {
     text-decoration: none;
     font-weight: 600;
 }
 
-.contact-section p {
-    background: #ffffff;
-    padding: 14px;
-    border-radius: 12px;
-    margin: 12px auto;
-    max-width: 650px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+.contact-services {
+    grid-column: span 1;
 }
 
-.contact-section p:last-child {
-    margin-bottom: 0;
-}  
+.contact-services p {
+    margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 
 </head>
