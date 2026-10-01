@@ -1,1 +1,241 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Test | Moti Diagnostics Centre</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9ff;
+            color: #222;
+        }
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 14px 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .booking-container {
+            max-width: 650px;
+            margin: 45px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+        }
+
+        .booking-container h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #0056b3;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #0056b3;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #003f87;
+        }
+
+        .back-home {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            padding: 11px 22px;
+            background: #eaf4ff;
+            color: #0056b3;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+
+            .booking-container {
+                margin: 25px 15px;
+                padding: 22px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>MOTI DIAGNOSTICS CENTRE</h1>
+</header>
+
+
+<div class="booking-container">
+
+    <h2>📅 Book Your Test</h2>
+
+    <form method="POST" action="/">
+
+        <div class="form-group">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Mobile Number</label>
+
+            <input
+                type="tel"
+                name="mobile"
+                placeholder="Enter your mobile number"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Select Test</label>
+
+            <select name="test" required>
+
+                <option value="">-- Select Test --</option>
+
+                <optgroup label="🩸 Blood Tests">
+                    <option>CBC</option>
+                    <option>Blood Sugar</option>
+                    <option>Lipid Profile</option>
+                    <option>Liver Function Test (LFT)</option>
+                    <option>Kidney Function Test (KFT)</option>
+                </optgroup>
+
+                <optgroup label="❤️ Heart Tests">
+                    <option>ECG</option>
+                    <option>2D Echo</option>
+                </optgroup>
+
+                <optgroup label="🩻 Imaging">
+                    <option>X-Ray</option>
+                    <option>Ultrasound</option>
+                    <option>MRI</option>
+                    <option>CT Scan</option>
+                </optgroup>
+
+                <optgroup label="🦋 Special Tests">
+                    <option>Thyroid Tests</option>
+                    <option>Diabetes Tests</option>
+                    <option>Hormone Tests</option>
+                </optgroup>
+
+                <optgroup label="🏥 Health Packages">
+                    <option>Basic Health Checkup</option>
+                    <option>Full Body Checkup</option>
+                </optgroup>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Preferred Date</label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+            📅 Book Test
+        </button>
+
+    </form>
+
+
+    <a href="/" class="back-home">
+        🏠 Back to Home
+    </a>
+
+</div>
+
+</body>
+
+</html>
+```
 
