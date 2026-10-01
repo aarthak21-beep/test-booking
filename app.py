@@ -10,7 +10,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
 DATABASE = "bookings.db"
 
 ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "1234"
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
 
 
 def init_db():
