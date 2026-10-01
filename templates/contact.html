@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +9,60 @@
     <title>Contact Us | Moti Diagnostics Centre</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f7fbff;
+            background: #f5f9ff;
             color: #222;
         }
 
+        /* Header */
+
         header {
-            background: #0b78b8;
+            background: #0056b3;
             color: white;
+            padding: 22px 20px;
             text-align: center;
-            padding: 25px 15px;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
         }
 
         header h1 {
             margin: 0;
             font-size: 28px;
+            letter-spacing: 1px;
         }
 
+        /* Main */
+
         .contact-section {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
         }
 
-        .contact-section h2 {
+        .contact-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
+
+        .contact-title h2 {
+            color: #0056b3;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-title p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Cards */
 
         .contact-grid {
             display: grid;
@@ -45,39 +72,168 @@
 
         .contact-card {
             background: white;
-            padding: 22px;
-            border-radius: 14px;
+            padding: 25px 20px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+        }
+
+        .contact-icon {
+            font-size: 34px;
+            margin-bottom: 10px;
         }
 
         .contact-card h3 {
-            margin-top: 0;
+            color: #0056b3;
+            margin: 5px 0 12px;
+        }
+
+        .contact-card p {
+            color: #555;
+            line-height: 1.6;
+            margin: 5px 0;
         }
 
         .contact-card a {
             text-decoration: none;
+            color: #0056b3;
             font-weight: bold;
         }
 
-        .back-home {
-            display: block;
-            width: fit-content;
-            margin: 30px auto 0;
-            padding: 12px 22px;
-            background: #0b78b8;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
+        /* Action Buttons */
+
+        .action-buttons {
+            margin-top: 12px;
         }
 
+        .action-btn {
+            display: inline-block;
+            padding: 9px 15px;
+            margin: 4px;
+            border-radius: 8px;
+            background: #0056b3;
+            color: white !important;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .whatsapp-btn {
+            background: #168c45;
+        }
+
+        /* Map */
+
+        .map-section {
+            margin-top: 35px;
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .map-section h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 22px;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        /* Home Collection */
+
+        .home-collection {
+            margin-top: 25px;
+            background: #eaf4ff;
+            padding: 28px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .home-collection h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        .home-collection p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Bottom Buttons */
+
+        .bottom-buttons {
+            text-align: center;
+            margin: 35px 0 10px;
+        }
+
+        .bottom-btn {
+            display: inline-block;
+            margin: 6px;
+            padding: 12px 22px;
+            border-radius: 9px;
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .bottom-btn.secondary {
+            background: #eaf4ff;
+            color: #0056b3;
+        }
+
+        /* Footer */
+
+        footer {
+            margin-top: 40px;
+            background: #003f87;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
         @media (max-width: 768px) {
+
+            .contact-section {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-title h2 {
+                font-size: 26px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
         }
+
     </style>
 </head>
+
 
 <body>
 
@@ -85,61 +241,239 @@
     <h1>MOTI DIAGNOSTICS CENTRE</h1>
 </header>
 
+
 <section class="contact-section">
 
-    <h2>📞 Contact Us</h2>
+    <div class="contact-title">
+
+        <h2>📞 Contact Us</h2>
+
+        <p>
+            We are here to help you with your diagnostic needs.
+        </p>
+
+    </div>
+
 
     <div class="contact-grid">
 
-        <div class="contact-card">
-            <h3>📍 Address</h3>
-            <p>Shanti Garden, Mira Road (E), Thane – 401107</p>
-        </div>
+
+        <!-- Address -->
 
         <div class="contact-card">
-            <h3>📞 Call Us</h3>
+
+            <div class="contact-icon">📍</div>
+
+            <h3>Visit Us</h3>
+
+            <p>
+                Shanti Garden,<br>
+                Mira Road (E),<br>
+                Thane – 401107
+            </p>
+
+            <div class="action-buttons">
+
+                <a
+                    class="action-btn"
+                    href="https://www.google.com/maps/search/?api=1&query=Shanti+Garden+Mira+Road+East+Thane+401107"
+                    target="_blank"
+                >
+                    🗺️ Get Directions
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Call -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">📞</div>
+
+            <h3>Call Us</h3>
+
             <p>
                 <a href="tel:+918286289143">
                     +91 8286289143
                 </a>
             </p>
+
+            <div class="action-buttons">
+
+                <a
+                    class="action-btn"
+                    href="tel:+918286289143"
+                >
+                    📞 Call Now
+                </a>
+
+            </div>
+
         </div>
 
+
+        <!-- WhatsApp -->
+
         <div class="contact-card">
-            <h3>💬 WhatsApp</h3>
+
+            <div class="contact-icon">💬</div>
+
+            <h3>WhatsApp</h3>
+
             <p>
                 <a href="https://wa.me/919867242848">
                     +91 9867242848
                 </a>
             </p>
+
+            <div class="action-buttons">
+
+                <a
+                    class="action-btn whatsapp-btn"
+                    href="https://wa.me/919867242848"
+                    target="_blank"
+                >
+                    💬 Chat on WhatsApp
+                </a>
+
+            </div>
+
         </div>
 
+
+        <!-- Email -->
+
         <div class="contact-card">
-            <h3>📧 Email</h3>
+
+            <div class="contact-icon">📧</div>
+
+            <h3>Email Us</h3>
+
             <p>
                 <a href="mailto:motidiagnostics@gmail.com">
                     motidiagnostics@gmail.com
                 </a>
             </p>
+
+            <div class="action-buttons">
+
+                <a
+                    class="action-btn"
+                    href="mailto:motidiagnostics@gmail.com"
+                >
+                    📧 Send Email
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="contact-card">
-            <h3>🕒 Working Hours</h3>
-            <p>Monday – Saturday<br>7:00 AM – 9:00 PM</p>
-            <p>Sunday<br>7:00 AM – 2:00 PM</p>
-        </div>
+
+        <!-- Working Hours -->
 
         <div class="contact-card">
-            <h3>🚗 Services</h3>
-            <p>Home Sample Collection Available</p>
+
+            <div class="contact-icon">🕒</div>
+
+            <h3>Working Hours</h3>
+
+            <p>
+                <strong>Monday – Saturday</strong><br>
+                7:00 AM – 9:00 PM
+            </p>
+
+            <p>
+                <strong>Sunday</strong><br>
+                7:00 AM – 2:00 PM
+            </p>
+
+        </div>
+
+
+        <!-- Services -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">🏥</div>
+
+            <h3>Our Services</h3>
+
+            <p>🚗 Home Sample Collection</p>
+
             <p>📄 Online Reports Available</p>
+
         </div>
+
 
     </div>
 
-    <a href="/" class="back-home">🏠 Back to Home</a>
+
+    <!-- Map -->
+
+    <div class="map-section">
+
+        <h2>🗺️ Find Us</h2>
+
+        <p>
+            Shanti Garden, Mira Road (E), Thane – 401107
+        </p>
+
+        <a
+            class="map-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Shanti+Garden+Mira+Road+East+Thane+401107"
+            target="_blank"
+        >
+            📍 Open in Google Maps
+        </a>
+
+    </div>
+
+
+    <!-- Home Collection -->
+
+    <div class="home-collection">
+
+        <h2>🚗 Home Sample Collection</h2>
+
+        <p>
+            Can't visit the centre?
+            Our home sample collection service makes
+            diagnostic testing more convenient for you.
+        </p>
+
+    </div>
+
+
+    <!-- Bottom -->
+
+    <div class="bottom-buttons">
+
+        <a href="/book-test" class="bottom-btn">
+            📅 Book Your Test
+        </a>
+
+        <a href="/" class="bottom-btn secondary">
+            🏠 Back to Home
+        </a>
+
+    </div>
+
 
 </section>
 
+
+<footer>
+
+    © 2026 MOTI Diagnostics Centre |
+    Accurate • Reliable • Caring
+
+</footer>
+
+
 </body>
+
 </html>
+```
