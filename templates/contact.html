@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Contact Us | Moti Diagnostics Centre</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7fbff;
+            color: #222;
+        }
+
+        header {
+            background: #0b78b8;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .contact-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+        }
+
+        .contact-card a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-home {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 12px 22px;
+            background: #0b78b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>MOTI DIAGNOSTICS CENTRE</h1>
+</header>
+
+<section class="contact-section">
+
+    <h2>📞 Contact Us</h2>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>📍 Address</h3>
+            <p>Shanti Garden, Mira Road (E), Thane – 401107</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📞 Call Us</h3>
+            <p>
+                <a href="tel:+918286289143">
+                    +91 8286289143
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>💬 WhatsApp</h3>
+            <p>
+                <a href="https://wa.me/919867242848">
+                    +91 9867242848
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📧 Email</h3>
+            <p>
+                <a href="mailto:motidiagnostics@gmail.com">
+                    motidiagnostics@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>🕒 Working Hours</h3>
+            <p>Monday – Saturday<br>7:00 AM – 9:00 PM</p>
+            <p>Sunday<br>7:00 AM – 2:00 PM</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>🚗 Services</h3>
+            <p>Home Sample Collection Available</p>
+            <p>📄 Online Reports Available</p>
+        </div>
+
+    </div>
+
+    <a href="/" class="back-home">🏠 Back to Home</a>
+
+</section>
+
+</body>
+</html>
