@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1109,9 +1110,6 @@ select {
         padding-bottom: 72px;
     }
 
-
-    /* HEADER */
-
     .header {
         position: sticky;
 
@@ -1167,24 +1165,18 @@ select {
     }
 
     .logo-sub {
-    display: inline-block;
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-left: 4px;
-    margin-top: 0;
+        display: inline-block;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-left: 4px;
+        margin-top: 0;
     }
-
-
-    /* HAMBURGER */
 
     .menu-toggle {
         display: block;
         flex-shrink: 0;
     }
-
-
-    /* MOBILE NAV */
 
     .nav-menu {
         position: absolute;
@@ -1239,9 +1231,6 @@ select {
         transform: none;
     }
 
-
-    /* HERO */
-
     .hero {
         min-height: 510px;
         padding: 60px 18px 70px;
@@ -1266,9 +1255,6 @@ select {
         line-height: 1.65;
     }
 
-
-    /* HERO BUTTONS */
-
     .buttons {
         margin-top: 26px;
     }
@@ -1287,9 +1273,6 @@ select {
 
         text-align: center;
     }
-
-
-    /* TRUST */
 
     .trust-strip {
         margin: -25px 12px 0;
@@ -1315,9 +1298,6 @@ select {
         font-size: 11px;
     }
 
-
-    /* SECTIONS */
-
     .section,
     .booking-section {
         padding: 58px 15px;
@@ -1336,9 +1316,6 @@ select {
     .section-heading p {
         font-size: 15px;
     }
-
-
-    /* TESTS */
 
     .test-container,
     .why-container,
@@ -1360,9 +1337,6 @@ select {
         padding: 12px;
     }
 
-
-    /* COLLECTION */
-
     .collection-box {
         grid-template-columns: 1fr;
 
@@ -1380,9 +1354,6 @@ select {
     .collection-box p {
         font-size: 15px;
     }
-
-
-    /* BOOKING FORM */
 
     .booking-form {
         padding: 25px 17px;
@@ -1405,9 +1376,6 @@ select {
         font-size: 17px;
     }
 
-
-    /* SUCCESS */
-
     .booking-success {
         padding: 35px 20px;
         border-radius: 18px;
@@ -1417,22 +1385,13 @@ select {
         font-size: 26px;
     }
 
-
-    /* QUESTIONS */
-
     .questions {
         padding: 60px 15px;
     }
 
-
-    /* CONTACT */
-
     .contact-item {
         padding: 21px;
     }
-
-
-    /* FLOATING WHATSAPP */
 
     .whatsapp-float {
         right: 15px;
@@ -1443,9 +1402,6 @@ select {
 
         font-size: 26px;
     }
-
-
-    /* BOTTOM BAR */
 
     .mobile-bottom-bar {
         display: flex;
@@ -1669,7 +1625,6 @@ select {
 
     </div>
 
-
     <div class="trust-item">
 
         <div class="trust-icon">🏠</div>
@@ -1680,7 +1635,6 @@ select {
 
     </div>
 
-
     <div class="trust-item">
 
         <div class="trust-icon">⚡</div>
@@ -1690,7 +1644,6 @@ select {
         <small>Convenient delivery</small>
 
     </div>
-
 
     <div class="trust-item">
 
@@ -1882,7 +1835,6 @@ select {
             id="bookingForm"
         >
 
-
             <label for="name">
                 Name
             </label>
@@ -1928,21 +1880,115 @@ select {
                     Select Test
                 </option>
 
-                <option value="CBC">
-                    CBC
-                </option>
 
-                <option value="Lipid Profile">
-                    Lipid Profile
-                </option>
+                <!-- BLOOD TESTS -->
 
-                <option value="Liver Function Test">
-                    Liver Function Test
-                </option>
+                <optgroup label="Blood Tests">
 
-                <option value="Kidney Function Test">
-                    Kidney Function Test
-                </option>
+                    <option value="CBC">
+                        CBC
+                    </option>
+
+                    <option value="Blood Sugar">
+                        Blood Sugar
+                    </option>
+
+                    <option value="Lipid Profile">
+                        Lipid Profile
+                    </option>
+
+                    <option value="Liver Function Test">
+                        Liver Function Test (LFT)
+                    </option>
+
+                    <option value="Kidney Function Test">
+                        Kidney Function Test (KFT)
+                    </option>
+
+                </optgroup>
+
+
+                <!-- HEART TESTS -->
+
+                <optgroup label="Heart Tests">
+
+                    <option value="ECG">
+                        ECG
+                    </option>
+
+                    <option value="2D Echo">
+                        2D Echo
+                    </option>
+
+                </optgroup>
+
+
+                <!-- IMAGING -->
+
+                <optgroup label="Imaging">
+
+                    <option value="X-Ray">
+                        X-Ray
+                    </option>
+
+                    <option value="Ultrasound">
+                        Ultrasound
+                    </option>
+
+                    <option value="MRI">
+                        MRI
+                    </option>
+
+                    <option value="CT Scan">
+                        CT Scan
+                    </option>
+
+                </optgroup>
+
+
+                <!-- SPECIAL TESTS -->
+
+                <optgroup label="Special Tests">
+
+                    <option value="Thyroid Tests">
+                        Thyroid Tests
+                    </option>
+
+                    <option value="Diabetes Tests">
+                        Diabetes Tests
+                    </option>
+
+                    <option value="Hormone Tests">
+                        Hormone Tests
+                    </option>
+
+                </optgroup>
+
+
+                <!-- HEALTH PACKAGES -->
+
+                <optgroup label="Health Packages">
+
+                    <option value="Basic Health Checkup">
+                        Basic Health Checkup
+                    </option>
+
+                    <option value="Full Body Checkup">
+                        Full Body Checkup
+                    </option>
+
+                </optgroup>
+
+
+                <!-- HOME COLLECTION -->
+
+                <optgroup label="Home Sample Collection">
+
+                    <option value="Home Sample Collection">
+                        Home Sample Collection
+                    </option>
+
+                </optgroup>
 
             </select>
 
@@ -2520,3 +2566,4 @@ document.addEventListener(
 </body>
 
 </html>
+```
