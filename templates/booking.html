@@ -1657,6 +1657,57 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 @media(max-width:650px){.hero{min-height:540px;padding:66px 18px 76px}.hero h1{font-size:clamp(36px,10vw,46px)}.trust-strip{border-radius:17px}.home-test-tools{margin:-12px auto 24px;padding:0 15px}.test-card,.why-card,.contact-item{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
+    
+/* ===== FULL PREMIUM DIAGNOSTIC HOMEPAGE ===== */
+:root{--premium-ink:#092844;--premium-blue:#075da8;--premium-cyan:#13b8c5;--premium-muted:#60788d}
+.premium-hero{min-height:650px;padding:76px clamp(20px,5vw,76px) 62px;text-align:left;background:radial-gradient(ellipse at 78% 10%,rgba(25,191,204,.17),transparent 32%),linear-gradient(125deg,#f1f9ff 0%,#fff 55%,#eafafd 100%)}
+.hero-layout{width:min(1190px,100%);margin:auto;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:45px}
+.premium-hero .hero-content{max-width:610px}
+.premium-hero .hero-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:23px;padding:9px 15px;border:1px solid #c9e8f0;background:#fff;color:#176b91;font-size:11px;letter-spacing:.8px;font-weight:900}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:#12b8a6;box-shadow:0 0 0 5px rgba(18,184,166,.12)}
+.hero-eyebrow,.section-kicker{margin:0 0 12px;color:#0795aa;font-size:11px;font-weight:900;letter-spacing:2px}
+.premium-hero h1{margin:0 0 20px;font-size:clamp(48px,6vw,76px);line-height:1.02;letter-spacing:-4px;color:#092844}
+.premium-hero h1 span{background:linear-gradient(100deg,#0875c8,#11b8c1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.premium-hero .hero-description{max-width:550px;margin:0;color:#587187;font-size:17px;line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-actions .book-btn,.hero-actions .whatsapp-btn{margin:0;padding:15px 20px}
+.hero-actions .book-btn span{margin-left:12px}
+.hero-assurance{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:26px;color:#597388;font-size:12px;font-weight:700}
+.hero-assurance span{color:#079b83;font-weight:900}.hero-assurance i{height:4px;width:4px;border-radius:50%;background:#9ab4c5}
+.hero-visual{position:relative;max-width:520px;margin:auto;width:100%;padding:22px}
+.hero-image-frame{position:relative;z-index:1;overflow:hidden;height:420px;border:8px solid rgba(255,255,255,.9);border-radius:34px;box-shadow:0 28px 70px rgba(7,57,99,.2);transform:rotate(1.5deg)}
+.hero-image-frame>img{width:100%;height:100%;display:block;object-fit:cover}
+.image-caption{position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:center;gap:12px;padding:15px;border:1px solid rgba(255,255,255,.45);border-radius:17px;background:rgba(5,35,64,.78);backdrop-filter:blur(12px);color:white}
+.caption-icon{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#12b8c5;font-size:22px}
+.image-caption strong,.image-caption small,.floating-chip strong,.floating-chip small{display:block}.image-caption small{margin-top:2px;color:#d2e9f3;font-size:11px}
+.floating-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;padding:13px 16px;border:1px solid #e0edf4;border-radius:16px;background:rgba(255,255,255,.94);box-shadow:0 14px 35px rgba(8,55,91,.14);color:#0a648d;font-size:22px}
+.floating-chip strong{color:#173d59;font-size:12px}.floating-chip small{margin-top:2px;color:#6d8293;font-size:10px}
+.chip-top{top:48px;right:-2px}.chip-bottom{bottom:54px;left:-10px}
+.visual-orbit{position:absolute;right:-30px;top:5px;width:150px;height:150px;border:1px solid rgba(11,157,182,.2);border-radius:50%;box-shadow:0 0 0 22px rgba(11,157,182,.035),0 0 0 44px rgba(11,157,182,.025)}
+.hero-scroll-hint{margin:38px auto 0;text-align:center;color:#8aa2b4;font-size:9px;font-weight:900;letter-spacing:2px}.hero-scroll-hint span{margin-left:8px;color:#0795aa;font-size:15px}
+.process-section{background:linear-gradient(135deg,#f0f8fd,#fff)}
+.process-grid{max-width:1080px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.process-card{position:relative;overflow:hidden;padding:30px;border:1px solid #dfebf3;border-radius:22px;background:#fff;box-shadow:0 12px 32px rgba(8,57,101,.055);transition:.25s}
+.process-card:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(8,83,137,.12)}
+.process-number{position:absolute;right:22px;top:17px;color:#e5f0f7;font-size:38px;font-weight:900}
+.process-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:20px;border-radius:17px;background:linear-gradient(140deg,#e4f5ff,#e4fbfa);font-size:27px}
+.process-card h3{margin-bottom:9px;color:#0b4e7c;font-size:19px}.process-card p{color:#667e91;font-size:14px;line-height:1.75}
+.faq-section{background:#fff}
+.faq-layout{max-width:1080px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+.faq-intro h2{margin:0 0 14px;color:#075da8;font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-1.5px}
+.faq-intro p{color:#657d91;line-height:1.8}
+.faq-contact-link{display:inline-block;margin-top:18px;color:#0787b7;font-weight:800}
+.faq-list{display:grid;gap:12px}
+.faq-item{padding:0 20px;border:1px solid #dfebf3;border-radius:15px;background:#f9fcff}
+.faq-item summary{display:flex;justify-content:space-between;gap:15px;padding:18px 0;cursor:pointer;list-style:none;color:#153e5d;font-weight:800}
+.faq-item summary::-webkit-details-marker{display:none}.faq-item summary span{color:#0b9db2;font-size:22px;line-height:1;transition:transform .2s}
+.faq-item[open] summary span{transform:rotate(45deg)}
+.faq-item p{padding:0 0 18px;color:#637b8f;font-size:14px;line-height:1.75}
+.section-heading .section-kicker{display:block}
+@media(max-width:850px){.premium-hero{padding:55px 22px 45px}.hero-layout{grid-template-columns:1fr;gap:24px}.premium-hero .hero-content{max-width:720px;margin:auto;text-align:center}.premium-hero .hero-description{margin:auto}.hero-actions,.hero-assurance{justify-content:center}.hero-visual{max-width:480px}.hero-image-frame{height:350px}.chip-top{right:-4px}.chip-bottom{left:-4px}.faq-layout{grid-template-columns:1fr;gap:28px}}
+@media(max-width:650px){.premium-hero{min-height:unset;padding:48px 16px 34px}.premium-hero h1{font-size:clamp(42px,12vw,57px);letter-spacing:-2.5px}.premium-hero .hero-description{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr;width:min(340px,100%);margin:24px auto 0}.hero-actions .book-btn,.hero-actions .whatsapp-btn{width:100%;max-width:none}.hero-assurance{font-size:10px;gap:7px}.hero-visual{padding:15px 10px}.hero-image-frame{height:290px;border-width:6px;border-radius:25px}.floating-chip{padding:10px 12px;font-size:18px}.chip-top{top:30px;right:-2px}.chip-bottom{bottom:34px;left:-2px}.visual-orbit{width:90px;height:90px;right:-8px}.hero-scroll-hint{margin-top:22px}.process-grid{grid-template-columns:1fr;gap:13px}.process-card{padding:23px}.faq-layout{gap:22px}.faq-item{padding:0 15px}}
+@media(prefers-reduced-motion:no-preference){.premium-hero .hero-content{animation:heroRise .7s ease both}.hero-visual{animation:heroFloat .8s .12s ease both}@keyframes heroRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes heroFloat{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}}
+
     </style>
 
 </head>
@@ -1721,47 +1772,30 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 
 <!-- ================= HERO ================= -->
 
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-badge">
-            🧬 Trusted Diagnostic Care
+<section class="hero premium-hero">
+    <div class="hero-layout">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="pulse-dot"></span> MOTI DIAGNOSTICS CENTRE · MIRA ROAD</div>
+            <p class="hero-eyebrow">CARE THAT STARTS WITH CLARITY</p>
+            <h1>Better Testing.<br><span>Better Health.</span></h1>
+            <p class="hero-description">Your health deserves thoughtful care. Explore diagnostic tests, book an appointment and choose convenient home sample collection with MOTI Diagnostics.</p>
+            <div class="buttons hero-actions">
+                <a class="book-btn" href="/book-test">🧪 Book a Test <span>→</span></a>
+                <a class="whatsapp-btn" href="https://wa.me/918692823879">💬 Chat on WhatsApp</a>
+            </div>
+            <div class="hero-assurance"><span>✓</span> Convenient appointments <i></i><span>✓</span> Home sample collection</div>
         </div>
-
-        <h1>
-            Your Health,
-            <span>Our Priority</span>
-        </h1>
-
-        <p>
-            Reliable diagnostic testing with accurate reports,
-            modern technology and convenient home sample collection.
-            Your health journey starts with better diagnostics.
-        </p>
-
-
-        <div class="buttons">
-
-            <a class="book-btn" href="/book-test">
-                🧪 Book Your Test
-            </a>
-
-            <a
-                class="whatsapp-btn"
-                href="https://wa.me/918692823879"
-            >
-                💬 WhatsApp Enquiry
-            </a>
-
-            <a class="contact-btn" href="/contact">
-                📞 Contact Us
-            </a>
-
+        <div class="hero-visual">
+            <div class="hero-image-frame">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1100&q=85" alt="Healthcare professional working in a modern diagnostic laboratory">
+                <div class="image-caption"><span class="caption-icon">✚</span><span><strong>Care with confidence</strong><small>Diagnostic services for your family</small></span></div>
+            </div>
+            <div class="floating-chip chip-top">🔬 <span><strong>Diagnostic Care</strong><small>Focused on quality</small></span></div>
+            <div class="floating-chip chip-bottom">🏠 <span><strong>Home Collection</strong><small>At your convenience</small></span></div>
+            <div class="visual-orbit"></div>
         </div>
-
     </div>
-
+    <div class="hero-scroll-hint">EXPLORE OUR SERVICES <span>↓</span></div>
 </section>
 
 
@@ -1966,6 +2000,20 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 </section>
 
 
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section process-section">
+    <div class="section-heading">
+        <span class="section-kicker">SIMPLE & CONVENIENT</span>
+        <h2>Your Test Booking in 3 Easy Steps</h2>
+        <p>A straightforward way to arrange your diagnostic test.</p>
+    </div>
+    <div class="process-grid">
+        <article class="process-card"><span class="process-number">01</span><div class="process-icon">🧪</div><h3>Choose Your Test</h3><p>Explore our diagnostic tests and select the test you need.</p></article>
+        <article class="process-card"><span class="process-number">02</span><div class="process-icon">📲</div><h3>Send Your Enquiry</h3><p>Share your details through our booking page or WhatsApp.</p></article>
+        <article class="process-card"><span class="process-number">03</span><div class="process-icon">🏡</div><h3>Visit or Home Collection</h3><p>Choose a centre visit or ask our team about home sample collection.</p></article>
+    </div>
+</section>
+
 <!-- ================= WHY CHOOSE US ================= -->
 
 <section class="section section-white">
@@ -2062,6 +2110,19 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 </section>
 
 
+<!-- ================= FAQ ================= -->
+<section class="section faq-section">
+    <div class="faq-layout">
+        <div class="faq-intro"><span class="section-kicker">HERE TO HELP</span><h2>Frequently Asked Questions</h2><p>Quick answers to common questions about booking and sample collection.</p><a class="faq-contact-link" href="/contact">Still have a question? Contact us →</a></div>
+        <div class="faq-list">
+            <details class="faq-item"><summary>How can I book a diagnostic test?<span>+</span></summary><p>Use the Book a Test page to share your details, or contact us directly on WhatsApp.</p></details>
+            <details class="faq-item"><summary>Is home sample collection available?<span>+</span></summary><p>Home sample collection is offered. Contact our team to check availability for your area and preferred time.</p></details>
+            <details class="faq-item"><summary>Where is MOTI Diagnostics Centre located?<span>+</span></summary><p>We are located at Shanti Garden, Mira Road (East), Thane – 401107.</p></details>
+            <details class="faq-item"><summary>How do I ask about test preparation?<span>+</span></summary><p>Preparation requirements can vary by test. Please contact our team before your appointment for test-specific guidance.</p></details>
+        </div>
+    </div>
+</section>
+
 <!-- ================= QUESTIONS ================= -->
 
 <section class="questions">
@@ -2148,7 +2209,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 
             <p>
                 <a href="https://wa.me/918692823879">
-                    +91 8286289143
+                    +91 8692823879
                 </a>
             </p>
 
