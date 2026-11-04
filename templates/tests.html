@@ -1156,6 +1156,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 }
 /* ===== END PREMIUM VISUAL UPGRADE ===== */
 
+
+/* LIVE SEARCH / FILTER */
+.catalog-tools{max-width:1120px;margin:-28px auto 0;padding:0 20px;position:relative;z-index:2}.catalog-panel{display:grid;grid-template-columns:minmax(0,1fr) 210px auto;gap:12px;align-items:center;padding:17px;background:rgba(255,255,255,.94);border:1px solid #dceaf5;border-radius:20px;box-shadow:0 18px 42px rgba(5,54,99,.12);backdrop-filter:blur(14px)}.catalog-search-wrap{position:relative}.catalog-search-wrap span{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:20px}.catalog-panel input,.catalog-panel select{width:100%;min-height:50px;padding:0 15px;border:1px solid #d8e6f1;border-radius:12px;background:#f8fbff;color:#173650;font:inherit;outline:none}.catalog-panel input{padding-left:46px}.catalog-panel input:focus,.catalog-panel select:focus{border-color:#078bd0;box-shadow:0 0 0 4px rgba(8,139,208,.11)}.catalog-count{white-space:nowrap;color:#547087;font-size:13px;font-weight:800;padding:0 8px}.catalog-count strong{color:#0878bd;font-size:18px}.test-card[hidden],.category[hidden]{display:none!important}.no-results{display:none;margin:22px 0;padding:32px 18px;text-align:center;background:#fff;border:1px dashed #a9cce5;border-radius:18px;color:#547087}.no-results.show{display:block}.no-results b{display:block;color:#07569b;font-size:20px;margin-bottom:6px}@media(max-width:700px){.catalog-tools{margin:-22px auto 0;padding:0 14px}.catalog-panel{grid-template-columns:1fr;gap:9px;padding:13px;border-radius:17px}.catalog-count{text-align:center;padding:5px}}
     </style>
 
 </head>
@@ -1236,6 +1239,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 </p>
 
 </section>
+
+<section class="catalog-tools" aria-label="Search diagnostic tests"><div class="catalog-panel"><label class="catalog-search-wrap"><span aria-hidden="true">⌕</span><input id="testSearch" type="search" placeholder="Search tests... e.g. CBC, Thyroid, ECG" aria-label="Search tests"></label><select id="categoryFilter" aria-label="Filter tests by category"><option value="all">All categories</option><option value="blood">Blood Tests</option><option value="heart">Heart Tests</option><option value="imaging">Imaging</option><option value="special">Special Tests</option><option value="packages">Health Packages</option></select><div class="catalog-count" aria-live="polite"><strong id="resultCount">15</strong> tests shown</div></div></section>
 
 <!-- ================= MAIN ================= -->
 
@@ -1519,6 +1524,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 </section>
 
 
+<div class="no-results" id="noResults"><b>🔎 No matching tests found</b>Try another test name or choose a different category.</div>
+
 <!-- HOME SAMPLE -->
 
 <div class="home-sample">
@@ -1593,6 +1600,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 <!-- ================= SCRIPT ================= -->
 
 <script>
+
+
+(function(){const search=document.getElementById('testSearch'),filter=document.getElementById('categoryFilter'),count=document.getElementById('resultCount'),empty=document.getElementById('noResults');if(!search||!filter||!count||!empty)return;const keys=['blood','heart','imaging','special','packages'];const groups=Array.from(document.querySelectorAll('.category')).map((section,index)=>({section,key:keys[index],cards:Array.from(section.querySelectorAll('.test-card'))}));function apply(){const term=search.value.trim().toLowerCase(),selected=filter.value;let total=0;groups.forEach(group=>{let shown=0;group.cards.forEach(card=>{const match=(selected==='all'||selected===group.key)&&card.textContent.toLowerCase().includes(term);card.hidden=!match;if(match){shown++;total++;}});group.section.hidden=shown===0;});count.textContent=total;empty.classList.toggle('show',total===0);}search.addEventListener('input',apply);filter.addEventListener('change',apply);apply();})();
 
 function toggleMenu() {
 
