@@ -836,46 +836,186 @@ select {
 
 
 /* =========================
-   FOOTER
+   PREMIUM FOOTER
 ========================= */
 
 .footer {
-    padding: 48px 20px 28px;
-
-    text-align: center;
-
+    position: relative;
+    overflow: hidden;
+    padding: 68px 22px 24px;
+    color: #eaf5ff;
     background:
-        linear-gradient(
-            135deg,
-            #002f61,
-            #004984
-        );
-
-    color: white;
+        radial-gradient(circle at 12% 10%, rgba(0,174,239,.20), transparent 28%),
+        radial-gradient(circle at 90% 85%, rgba(0,105,210,.25), transparent 30%),
+        linear-gradient(135deg, #031b36 0%, #063b70 55%, #05294d 100%);
 }
 
-.footer h3 {
-    font-size: 26px;
-    margin-bottom: 8px;
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6ff, #65e0c2, #1688ff);
 }
 
-.footer p {
-    opacity: 0.88;
-    margin: 7px 0;
+.footer-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1.15fr;
+    gap: 42px;
 }
 
-.footer-line {
-    max-width: 600px;
-
-    margin: 25px auto 15px;
-
-    border-top:
-        1px solid rgba(255,255,255,0.25);
+.footer-brand h3 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: .6px;
 }
 
-.copyright {
+.footer-brand p,
+.footer-column p {
+    margin: 0 0 12px;
+    color: #c5d8eb;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.footer-kicker {
+    display: inline-block;
+    margin-bottom: 13px;
+    padding: 6px 12px;
+    border: 1px solid rgba(113,211,255,.3);
+    border-radius: 30px;
+    background: rgba(255,255,255,.08);
+    color: #8fe4ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.footer-column h4 {
+    margin: 5px 0 18px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.footer-links {
+    display: grid;
+    gap: 11px;
+}
+
+.footer a {
+    color: #c5d8eb;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #70ddff;
+    transform: translateX(3px);
+}
+
+.footer-links a::before {
+    content: "›";
+    margin-right: 9px;
+    color: #56d5f5;
+    font-weight: 900;
+}
+
+.footer-contact p {
+    margin-bottom: 13px;
+}
+
+.footer-contact strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #82dcff;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.footer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 11px 17px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0877d5, #00a4d8);
+    color: #fff !important;
     font-size: 13px;
-    opacity: 0.65;
+    font-weight: 800;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+
+.footer-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.24);
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 44px auto 0;
+    padding-top: 19px;
+    border-top: 1px solid rgba(220,240,255,.17);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #a9c2d9;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #8fe4ff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .footer {
+        padding: 52px 20px 22px;
+    }
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 22px;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+    .footer-brand h3 {
+        font-size: 22px;
+    }
+    .footer-bottom {
+        margin-top: 32px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .footer-brand {
+        grid-column: auto;
+    }
 }
 
 
@@ -2060,30 +2200,38 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="footer-kicker">Your health, our priority</span>
+            <h3>🧬 MOTI DIAGNOSTICS CENTRE</h3>
+            <p>Reliable diagnostic services for you and your family. Quality-focused care, convenient appointments and home sample collection.</p>
+            <a class="footer-cta" href="/book-test">🧪 Book Your Test</a>
+        </div>
 
-    <h3>
-        MOTI DIAGNOSTICS CENTRE
-    </h3>
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/tests">Our Tests</a>
+                <a href="/book-test">Book a Test</a>
+                <a href="/contact">Contact Us</a>
+            </nav>
+        </div>
 
-    <p>
-        Reliable Diagnostic Services for You and Your Family
-    </p>
+        <div class="footer-column footer-contact">
+            <h4>Get in Touch</h4>
+            <p><strong>Visit Us</strong>📍 Shanti Garden, Mira Road (E), Thane – 401107</p>
+            <p><strong>Call Us</strong><a href="tel:+918286289143">+91 8286289143</a></p>
+            <p><strong>WhatsApp</strong><a href="https://wa.me/918692823879">+91 8692823879</a></p>
+            <p><strong>Email</strong><a href="mailto:motidiagnostics@gmail.com">motidiagnostics@gmail.com</a></p>
+        </div>
+    </div>
 
-    <p>
-        📍 Shanti Garden, Mira Road (E), Thane – 401107
-    </p>
-
-    <p>
-        📞 +91 8286289143
-    </p>
-
-    <div class="footer-line"></div>
-
-    <p class="copyright">
-        © 2026 MOTI DIAGNOSTICS CENTRE.
-        All Rights Reserved.
-    </p>
-
+    <div class="footer-bottom">
+        <p>© 2026 MOTI DIAGNOSTICS CENTRE. All Rights Reserved.</p>
+        <a href="/">Back to Home ↑</a>
+    </div>
 </footer>
 
 
