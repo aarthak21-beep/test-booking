@@ -2051,7 +2051,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
                 type="submit"
                 id="submitButton"
             >
-                🧪 Confirm Test Booking
+                💬 Send Booking on WhatsApp
             </button>
 
         </form>
@@ -2495,82 +2495,25 @@ if (dateInput) {
    BOOKING SUBMIT
 ========================= */
 
-const bookingForm =
-    document.getElementById("bookingForm");
+const bookingForm = document.getElementById("bookingForm");
 
 if (bookingForm) {
+    bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!bookingForm.reportValidity()) return;
 
-    bookingForm.addEventListener(
-        "submit",
-        async function (event) {
+        const data = new FormData(bookingForm);
+        const message = [
+            "Hello MOTI Diagnostics Centre, I would like to book a test.",
+            "",
+            "Name: " + data.get("name"),
+            "Mobile: " + data.get("mobile"),
+            "Test: " + data.get("test"),
+            "Preferred Date: " + data.get("date")
+        ].join("\n");
 
-            event.preventDefault();
-
-            const submitButton =
-                document.getElementById(
-                    "submitButton"
-                );
-
-            const formData =
-                new FormData(bookingForm);
-
-            submitButton.disabled = true;
-
-            submitButton.innerHTML =
-                "⏳ Submitting...";
-
-            try {
-
-                const response =
-                    await fetch(
-                        "/",
-                        {
-                            method: "POST",
-                            body: formData
-                        }
-                    );
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Booking failed"
-                    );
-
-                }
-
-                document.getElementById(
-                    "bookingFormBox"
-                ).style.display = "none";
-
-                document.getElementById(
-                    "bookingSuccess"
-                ).style.display = "block";
-
-                document.getElementById(
-                    "bookingSuccess"
-                ).scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-
-            }
-
-            catch (error) {
-
-                submitButton.disabled = false;
-
-                submitButton.innerHTML =
-                    "🧪 Confirm Test Booking";
-
-                alert(
-                    "Something went wrong. Please try again or contact us on WhatsApp."
-                );
-
-            }
-
-        }
-    );
-
+        window.location.href = "https://wa.me/918692823879?text=" + encodeURIComponent(message);
+    });
 }
 
 
