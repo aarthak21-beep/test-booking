@@ -674,206 +674,6 @@ select {
 
 
 /* =========================
-   BOOKING
-========================= */
-
-.booking-section {
-    padding: 85px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef7ff,
-            #f9fcff
-        );
-}
-
-.booking-form {
-    max-width: 590px;
-
-    margin: auto;
-
-    background: white;
-
-    padding: 38px;
-
-    border-radius: 22px;
-
-    border: 1px solid #e1edf8;
-
-    box-shadow:
-        0 15px 40px rgba(0,75,153,0.12);
-}
-
-.booking-form label {
-    display: block;
-
-    margin-top: 17px;
-    margin-bottom: 7px;
-
-    color: #344054;
-
-    font-weight: 700;
-}
-
-.booking-form input,
-.booking-form select {
-    width: 100%;
-
-    min-height: 50px;
-
-    padding: 14px 15px;
-
-    border: 1px solid #d8e3ee;
-
-    border-radius: 10px;
-
-    background: #fbfdff;
-
-    color: #1d2939;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition: 0.2s;
-}
-
-.booking-form input:focus,
-.booking-form select:focus {
-    border-color: #0075d4;
-
-    box-shadow:
-        0 0 0 4px rgba(0,117,212,0.10);
-}
-
-.booking-form button {
-    width: 100%;
-
-    margin-top: 28px;
-
-    padding: 16px;
-
-    min-height: 52px;
-
-    border: none;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #005fc4,
-            #0086eb
-        );
-
-    color: white;
-
-    font-size: 18px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-.booking-form button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 22px rgba(0,102,204,0.20);
-}
-
-
-/* =========================
-   BOOKING SUCCESS
-========================= */
-
-.booking-success {
-    display: none;
-
-    max-width: 590px;
-
-    margin: auto;
-
-    padding: 45px 30px;
-
-    background: white;
-
-    border-radius: 22px;
-
-    border: 1px solid #d9f2e3;
-
-    box-shadow:
-        0 15px 40px rgba(0,75,153,0.12);
-
-    text-align: center;
-}
-
-.success-icon {
-    width: 76px;
-    height: 76px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #e9fff1;
-
-    font-size: 42px;
-}
-
-.booking-success h2 {
-    color: #087443;
-
-    font-size: 29px;
-
-    margin-bottom: 10px;
-}
-
-.booking-success p {
-    color: #667085;
-
-    margin-bottom: 22px;
-}
-
-.success-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-.success-buttons a {
-    display: inline-block;
-
-    padding: 12px 18px;
-
-    border-radius: 10px;
-
-    font-weight: 800;
-
-    color: white;
-}
-
-.success-home {
-    background: #0066cc;
-}
-
-.success-whatsapp {
-    background: #20c866;
-}
-
-
-/* =========================
    WHY CHOOSE US
 ========================= */
 
@@ -1801,7 +1601,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 
         <div class="buttons">
 
-            <a class="book-btn" href="#booking">
+            <a class="book-btn" href="/book-test">
                 🧪 Book Your Test
             </a>
 
@@ -1905,9 +1705,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
             </p>
 
             <a
-                href="#booking"
+                href="/book-test"
                 class="test-btn"
-                onclick="selectTest('CBC')"
             >
                 Book Now →
             </a>
@@ -1927,9 +1726,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
             </p>
 
             <a
-                href="#booking"
+                href="/book-test"
                 class="test-btn"
-                onclick="selectTest('Lipid Profile')"
             >
                 Book Now →
             </a>
@@ -1949,9 +1747,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
             </p>
 
             <a
-                href="#booking"
+                href="/book-test"
                 class="test-btn"
-                onclick="selectTest('Liver Function Test')"
             >
                 Book Now →
             </a>
@@ -1971,9 +1768,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
             </p>
 
             <a
-                href="#booking"
+                href="/book-test"
                 class="test-btn"
-                onclick="selectTest('Kidney Function Test')"
             >
                 Book Now →
             </a>
@@ -2020,255 +1816,6 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
             <div class="collection-point">
                 ✓ Online reports available
             </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= BOOKING ================= -->
-
-<section class="booking-section" id="booking">
-
-    <div class="section-heading">
-
-        <h2>Book Your Test</h2>
-
-        <p>
-            Fill in your details and we will contact you
-            for confirmation.
-        </p>
-
-    </div>
-
-
-    <div class="booking-form" id="bookingFormBox">
-
-        <form
-            method="POST"
-            id="bookingForm"
-        >
-
-            <label for="name">
-                Name
-            </label>
-
-            <input
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                autocomplete="name"
-                required
-            >
-
-
-            <label for="mobile">
-                Mobile Number
-            </label>
-
-            <input
-                id="mobile"
-                type="tel"
-                name="mobile"
-                placeholder="Enter your 10-digit mobile number"
-                inputmode="numeric"
-                autocomplete="tel"
-                required
-                maxlength="10"
-                pattern="[0-9]{10}"
-            >
-
-
-            <label for="test">
-                Select Test
-            </label>
-
-            <select
-                id="test"
-                name="test"
-                required
-            >
-
-                <option value="">
-                    Select Test
-                </option>
-
-
-                <!-- BLOOD TESTS -->
-
-                <optgroup label="Blood Tests">
-
-                    <option value="CBC">
-                        CBC
-                    </option>
-
-                    <option value="Blood Sugar">
-                        Blood Sugar
-                    </option>
-
-                    <option value="Lipid Profile">
-                        Lipid Profile
-                    </option>
-
-                    <option value="Liver Function Test">
-                        Liver Function Test (LFT)
-                    </option>
-
-                    <option value="Kidney Function Test">
-                        Kidney Function Test (KFT)
-                    </option>
-
-                </optgroup>
-
-
-                <!-- HEART TESTS -->
-
-                <optgroup label="Heart Tests">
-
-                    <option value="ECG">
-                        ECG
-                    </option>
-
-                    <option value="2D Echo">
-                        2D Echo
-                    </option>
-
-                </optgroup>
-
-
-                <!-- IMAGING -->
-
-                <optgroup label="Imaging">
-
-                    <option value="X-Ray">
-                        X-Ray
-                    </option>
-
-                    <option value="Ultrasound">
-                        Ultrasound
-                    </option>
-
-                    <option value="MRI">
-                        MRI
-                    </option>
-
-                    <option value="CT Scan">
-                        CT Scan
-                    </option>
-
-                </optgroup>
-
-
-                <!-- SPECIAL TESTS -->
-
-                <optgroup label="Special Tests">
-
-                    <option value="Thyroid Tests">
-                        Thyroid Tests
-                    </option>
-
-                    <option value="Diabetes Tests">
-                        Diabetes Tests
-                    </option>
-
-                    <option value="Hormone Tests">
-                        Hormone Tests
-                    </option>
-
-                </optgroup>
-
-
-                <!-- HEALTH PACKAGES -->
-
-                <optgroup label="Health Packages">
-
-                    <option value="Basic Health Checkup">
-                        Basic Health Checkup
-                    </option>
-
-                    <option value="Full Body Checkup">
-                        Full Body Checkup
-                    </option>
-
-                </optgroup>
-
-
-                <!-- HOME COLLECTION -->
-
-                <optgroup label="Home Sample Collection">
-
-                    <option value="Home Sample Collection">
-                        Home Sample Collection
-                    </option>
-
-                </optgroup>
-
-            </select>
-
-
-            <label for="date">
-                Preferred Date
-            </label>
-
-            <input
-                id="date"
-                type="date"
-                name="date"
-                required
-            >
-
-
-            <button
-                type="submit"
-                id="submitButton"
-            >
-                💬 Send Booking on WhatsApp
-            </button>
-
-        </form>
-
-    </div>
-
-
-    <!-- SUCCESS SCREEN -->
-
-    <div
-        class="booking-success"
-        id="bookingSuccess"
-    >
-
-        <div class="success-icon">
-            ✅
-        </div>
-
-        <h2>
-            Booking Received!
-        </h2>
-
-        <p>
-            Thank you for booking with
-            MOTI Diagnostics Centre.
-            Our team will contact you for confirmation.
-        </p>
-
-        <div class="success-buttons">
-
-            <a
-                href="/"
-                class="success-home"
-            >
-                🏠 Back to Home
-            </a>
-
-            <a
-                href="https://wa.me/918692823879"
-                class="success-whatsapp"
-            >
-                💬 WhatsApp Us
-            </a>
 
         </div>
 
@@ -2565,7 +2112,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
         <span>WhatsApp</span>
     </a>
 
-    <a href="#booking">
+    <a href="/book-test">
         <span>🧪</span>
         <span>Book Test</span>
     </a>
@@ -2600,94 +2147,6 @@ function closeMenu() {
 
     menu.classList.remove("show");
 
-}
-
-
-/* =========================
-   SELECT TEST
-========================= */
-
-function selectTest(testName) {
-
-    const testSelect =
-        document.querySelector(
-            'select[name="test"]'
-        );
-
-    if (testSelect) {
-
-        testSelect.value = testName;
-
-    }
-
-}
-
-
-/* =========================
-   MOBILE NUMBER
-========================= */
-
-const mobileInput =
-    document.getElementById("mobile");
-
-if (mobileInput) {
-
-    mobileInput.addEventListener(
-        "input",
-        function () {
-
-            this.value =
-                this.value.replace(
-                    /[^0-9]/g,
-                    ""
-                );
-
-        }
-    );
-
-}
-
-
-/* =========================
-   MINIMUM BOOKING DATE
-========================= */
-
-const dateInput =
-    document.getElementById("date");
-
-if (dateInput) {
-
-    const today =
-        new Date().toISOString().split("T")[0];
-
-    dateInput.min = today;
-
-}
-
-
-/* =========================
-   BOOKING SUBMIT
-========================= */
-
-const bookingForm = document.getElementById("bookingForm");
-
-if (bookingForm) {
-    bookingForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        if (!bookingForm.reportValidity()) return;
-
-        const data = new FormData(bookingForm);
-        const message = [
-            "Hello MOTI Diagnostics Centre, I would like to book a test.",
-            "",
-            "Name: " + data.get("name"),
-            "Mobile: " + data.get("mobile"),
-            "Test: " + data.get("test"),
-            "Preferred Date: " + data.get("date")
-        ].join("\n");
-
-        window.location.href = "https://wa.me/918692823879?text=" + encodeURIComponent(message);
-    });
 }
 
 
