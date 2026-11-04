@@ -131,7 +131,7 @@
 
     <h2>📅 Book Your Test</h2>
 
-    <form method="POST" action="/">
+    <form id="quickBookingForm">
 
         <div class="form-group">
 
@@ -221,7 +221,7 @@
 
 
         <button type="submit" class="submit-btn">
-            📅 Book Test
+            💬 Send Booking on WhatsApp
         </button>
 
     </form>
@@ -232,6 +232,19 @@
     </a>
 
 </div>
+
+<script>
+const quickBookingForm = document.getElementById("quickBookingForm");
+quickBookingForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (!quickBookingForm.reportValidity()) return;
+    const data = new FormData(quickBookingForm);
+    const message = ["Hello MOTI Diagnostics Centre, I would like to book a test.", "", "Name: " + data.get("name"), "Mobile: " + data.get("mobile"), "Test: " + data.get("test"), "Preferred Date: " + data.get("date")].join("\n");
+    window.location.href = "https://wa.me/918692823879?text=" + encodeURIComponent(message);
+});
+const dateField = quickBookingForm.querySelector('input[name="date"]');
+dateField.min = new Date().toISOString().split("T")[0];
+</script>
 
 </body>
 
