@@ -165,6 +165,26 @@ select {
 }
 
 
+
+/* Homepage popular-test live search */
+(function(){
+ const input=document.getElementById("homeTestSearch");
+ const grid=document.getElementById("homePopularTests");
+ const empty=document.getElementById("homeTestNoResults");
+ if(!input||!grid||!empty)return;
+ const cards=Array.from(grid.querySelectorAll(".test-card"));
+ input.addEventListener("input",function(){
+  const query=input.value.trim().toLowerCase();
+  let shown=0;
+  cards.forEach(card=>{
+   const match=card.textContent.toLowerCase().includes(query);
+   card.hidden=!match;
+   if(match)shown++;
+  });
+  empty.classList.toggle("show",shown===0);
+ });
+})();
+
 /* =========================
    MOBILE MENU BUTTON
 ========================= */
@@ -1652,6 +1672,51 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 }
 /* ===== END PREMIUM VISUAL UPGRADE ===== */
 
+
+/* ===== HOMEPAGE PREMIUM CLINICAL EXPERIENCE ===== */
+:root{--moti-ink:#102b45;--moti-blue:#075da8;--moti-cyan:#12b8c8;--moti-line:#dceaf4}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f4f9fd;color:var(--moti-ink)}
+.header{background:linear-gradient(112deg,#041a35 0%,#07569b 58%,#087fbd 100%);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 12px 34px rgba(4,35,72,.2)}
+.nav-menu a{border:1px solid transparent;transition:all .22s ease}
+.nav-menu a:hover{background:rgba(255,255,255,.16);color:#fff;transform:translateY(-2px)}
+.hero{isolation:isolate;min-height:610px;background:radial-gradient(circle at 82% 18%,rgba(18,184,200,.22),transparent 25rem),radial-gradient(circle at 8% 88%,rgba(7,93,168,.16),transparent 27rem),linear-gradient(135deg,#eaf6ff,#fff 58%,#e8fbfd)}
+.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border:1px solid rgba(7,93,168,.13);border-radius:50%;pointer-events:none}
+.hero:before{width:390px;height:390px;left:-160px;top:-210px;box-shadow:0 0 0 38px rgba(7,93,168,.035),0 0 0 78px rgba(7,93,168,.025)}
+.hero:after{width:460px;height:460px;right:-190px;bottom:-300px;box-shadow:0 0 0 42px rgba(18,184,200,.035)}
+.hero-content{max-width:900px}
+.hero-badge{border:1px solid #c7edf2;background:linear-gradient(120deg,#fff,#e9fbfd);color:#087d9b;box-shadow:0 8px 24px rgba(7,91,143,.08)}
+.hero h1{font-size:clamp(42px,6vw,68px);letter-spacing:-.055em;line-height:1.08}
+.hero h1 span{background:linear-gradient(100deg,#0875c8,#0aaebe);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{line-height:1.85;color:#536d83}
+.book-btn,.contact-btn,.test-btn,.booking-form button{border:0;border-radius:13px;background:linear-gradient(110deg,#0759a5,#078bd0 58%,#12adbd);box-shadow:0 10px 24px rgba(7,105,174,.2);transition:transform .22s,box-shadow .22s,filter .22s}
+.book-btn:hover,.contact-btn:hover,.test-btn:hover,.booking-form button:hover{transform:translateY(-3px);filter:brightness(1.06);box-shadow:0 15px 30px rgba(7,105,174,.25)}
+.whatsapp-btn,.success-whatsapp{border-radius:13px;background:linear-gradient(110deg,#0aaf65,#20c979);box-shadow:0 9px 22px rgba(16,174,101,.18)}
+.trust-strip{border:1px solid rgba(210,229,242,.9);border-radius:22px;box-shadow:0 18px 42px rgba(5,54,99,.11)}
+.trust-item{padding:27px 15px}
+.trust-icon{filter:drop-shadow(0 4px 7px rgba(7,93,168,.12))}
+.section{position:relative}
+.section-heading h2,.questions h2{letter-spacing:-.035em}
+.test-card,.why-card,.contact-item,.booking-form{border:1px solid rgba(205,224,239,.92);border-radius:21px;background:linear-gradient(145deg,#fff,#f7fbff);box-shadow:0 12px 32px rgba(8,57,101,.075);transition:transform .25s,box-shadow .25s,border-color .25s}
+.test-card:hover,.why-card:hover,.contact-item:hover{transform:translateY(-7px);border-color:#9edce8;box-shadow:0 20px 42px rgba(8,83,137,.14)}
+.test-icon,.why-icon{border-radius:17px;background:linear-gradient(145deg,#e4f5ff,#e6fbfc)}
+.test-card h3{letter-spacing:-.02em}
+.collection-box{background:linear-gradient(120deg,#061f42,#075da5 62%,#0b9eb5);border:1px solid rgba(255,255,255,.18);box-shadow:0 22px 48px rgba(5,54,99,.2)}
+.collection-point{border-radius:13px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px)}
+.booking-section{background:radial-gradient(circle at 10% 10%,rgba(18,184,200,.1),transparent 25rem),linear-gradient(135deg,#eef7ff,#f9fcff)}
+.booking-form{padding:clamp(24px,4vw,42px)}
+.booking-form input,.booking-form select{border-color:#d6e5f0;border-radius:12px;background:#fbfdff}
+.booking-form input:focus,.booking-form select:focus{border-color:#078bd0;box-shadow:0 0 0 4px rgba(8,139,208,.12)}
+.footer{background:linear-gradient(115deg,#04172f,#062e58 65%,#07547a)}
+.whatsapp-float{background:linear-gradient(145deg,#0aaf65,#20c979);box-shadow:0 10px 28px rgba(10,175,101,.3)}
+.home-test-tools{max-width:1100px;margin:-18px auto 30px;padding:0 20px;position:relative;z-index:2}
+.home-test-search{width:100%;min-height:54px;padding:0 18px;border:1px solid #d6e7f2;border-radius:15px;background:#fff;color:#173650;font:inherit;box-shadow:0 12px 30px rgba(5,54,99,.08);outline:none}
+.home-test-search:focus{border-color:#078bd0;box-shadow:0 0 0 4px rgba(8,139,208,.11)}
+.home-no-results{display:none;text-align:center;padding:20px;color:#647b90}
+.home-no-results.show{display:block}
+.test-card[hidden]{display:none!important}
+@media(max-width:650px){.hero{min-height:540px;padding:66px 18px 76px}.hero h1{font-size:clamp(36px,10vw,46px)}.trust-strip{border-radius:17px}.home-test-tools{margin:-12px auto 24px;padding:0 15px}.test-card,.why-card,.contact-item{border-radius:18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
     </style>
 
 </head>
@@ -1705,7 +1770,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 
         <a href="/contact" onclick="closeMenu()">📞 Contact Us</a>
 
-        <a href="tel:+918692823879">📞 Call</a>
+        <a href="tel:+918286289143">📞 Call</a>
 
     </nav>
 
@@ -1820,8 +1885,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 
     </div>
 
+    <div class="home-test-tools">
+        <input class="home-test-search" id="homeTestSearch" type="search" placeholder="🔎  Search popular tests — CBC, Lipid Profile, Liver, Kidney..." aria-label="Search popular diagnostic tests">
+        <p class="home-no-results" id="homeTestNoResults">No matching popular test found. Try another name or explore all tests.</p>
+    </div>
 
-    <div class="test-container">
+    <div class="test-container" id="homePopularTests">
 
 
         <div class="test-card">
@@ -2321,7 +2390,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
     <div class="buttons">
 
         <a
-            href="tel:+918692823879"
+            href="tel:+918286289143"
             class="book-btn"
         >
             📞 Call Now
@@ -2376,8 +2445,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
             <h3>📞 Call</h3>
 
             <p>
-                <a href="tel:+918692823879">
-                    +91 8692823879
+                <a href="tel:+918286289143">
+                    +91 8286289143
                 </a>
             </p>
 
@@ -2390,7 +2459,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 
             <p>
                 <a href="https://wa.me/918692823879">
-                    +91 8692823879
+                    +91 8286289143
                 </a>
             </p>
 
@@ -2458,7 +2527,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
     </p>
 
     <p>
-        📞 +91 8692823879
+        📞 +91 8286289143
     </p>
 
     <div class="footer-line"></div>
@@ -2486,7 +2555,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
 
 <div class="mobile-bottom-bar">
 
-    <a href="tel:+918692823879">
+    <a href="tel:+918286289143">
         <span>📞</span>
         <span>Call</span>
     </a>
