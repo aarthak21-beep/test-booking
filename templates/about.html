@@ -186,7 +186,112 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
-  </style>
+  
+/* ===== MOTI DIAGNOSTICS | PREMIUM VISUAL UPGRADE ===== */
+:root {
+  --md-navy:#061d3b; --md-blue:#0878d1; --md-cyan:#16c6d4;
+  --md-ink:#142c46; --md-muted:#63788e; --md-line:#dce9f4;
+}
+html { scroll-behavior:smooth; }
+body {
+  color:var(--md-ink);
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(22,198,212,.10),transparent 32rem),
+    radial-gradient(ellipse at 100% 38%,rgba(8,120,209,.08),transparent 34rem),
+    #f4f9fd;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+header,.header,.topbar {
+  background:linear-gradient(112deg,#041a35 0%,#07569b 58%,#087fbd 100%) !important;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 34px rgba(4,35,72,.20) !important;
+}
+.logo,.brand { filter:drop-shadow(0 2px 8px rgba(0,0,0,.12)); }
+.nav-menu a,.home-link { transition:all .22s ease; }
+.nav-menu a:hover { background:rgba(255,255,255,.16) !important; color:#fff !important; }
+.hero {
+  background:
+    radial-gradient(circle at 82% 18%,rgba(22,198,212,.20),transparent 24rem),
+    radial-gradient(circle at 8% 88%,rgba(8,120,209,.16),transparent 27rem),
+    linear-gradient(135deg,#eaf6ff,#fff 58%,#eafcff) !important;
+}
+.hero h1,h1 { letter-spacing:-.045em; }
+.hero h1 span { color:#079dbb; }
+.hero-badge,.eyebrow {
+  border:1px solid #c7edf2;
+  background:linear-gradient(120deg,#fff,#e9fbfd);
+  color:#087d9b;
+  box-shadow:0 8px 24px rgba(7,91,143,.08);
+}
+.section-heading h2,.category-title,.questions h2 { color:#07569b; letter-spacing:-.025em; }
+.test-card,.why-card,.contact-item,.booking-form,.booking-card,.benefit,
+.feature-card,.service-card,.about-card,.mission-card {
+  border:1px solid rgba(205,224,239,.9) !important;
+  border-radius:20px !important;
+  background:linear-gradient(145deg,#fff,#f7fbff) !important;
+  box-shadow:0 12px 32px rgba(8,57,101,.075) !important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.test-card:hover,.why-card:hover,.contact-item:hover,
+.feature-card:hover,.service-card:hover,.about-card:hover {
+  transform:translateY(-6px);
+  border-color:#9edce8 !important;
+  box-shadow:0 20px 42px rgba(8,83,137,.14) !important;
+}
+.test-card::before { background:linear-gradient(90deg,#0878d1,#16c6d4) !important; }
+.test-icon,.why-icon,.benefit-icon {
+  border-radius:16px !important;
+  background:linear-gradient(145deg,#e4f5ff,#e6fbfc) !important;
+}
+.book-btn,.test-btn,.submit-btn,.booking-form button,
+.book-test-btn,.contact-btn,.whatsapp-btn {
+  border:0;
+  border-radius:12px !important;
+  background:linear-gradient(110deg,#0759a5,#078bd0 58%,#12adbd) !important;
+  color:#fff !important;
+  box-shadow:0 9px 22px rgba(7,105,174,.20);
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+}
+.book-btn:hover,.test-btn:hover,.submit-btn:hover,
+.booking-form button:hover,.book-test-btn:hover,.contact-btn:hover {
+  transform:translateY(-3px);
+  filter:brightness(1.06);
+  box-shadow:0 14px 28px rgba(7,105,174,.28);
+}
+.whatsapp-btn,.success-whatsapp {
+  background:linear-gradient(110deg,#0aaf65,#20c979) !important;
+  box-shadow:0 9px 22px rgba(16,174,101,.18);
+}
+input,select,textarea {
+  border-color:#d6e5f0 !important;
+  border-radius:11px !important;
+  background:#fbfdff !important;
+}
+input:focus,select:focus,textarea:focus {
+  border-color:#078bd0 !important;
+  box-shadow:0 0 0 4px rgba(8,139,208,.12) !important;
+}
+.collection-box,.cta-box,.home-sample {
+  background:linear-gradient(120deg,#061f42,#075da5 62%,#0b9eb5) !important;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 20px 45px rgba(5,54,99,.20);
+}
+.footer {
+  background:linear-gradient(115deg,#04172f,#062e58 65%,#07547a) !important;
+}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible {
+  outline:3px solid #19bfd0 !important; outline-offset:3px;
+}
+@media(max-width:650px) {
+  .hero { background:linear-gradient(150deg,#eaf6ff,#fff 65%,#e8fbfd) !important; }
+  .test-card,.why-card,.contact-item { border-radius:17px !important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}
+/* ===== END PREMIUM VISUAL UPGRADE ===== */
+
+    </style>
 </head>
 <body>
   <header class="header">
