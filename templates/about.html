@@ -1,1512 +1,333 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About Us | MOTI Diagnostics Centre</title>
-
-<style>
-
-/* =========================
-   GLOBAL
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f9ff;
-    color: #1d2939;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    min-height: 78px;
-    padding: 11px 28px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background:
-        linear-gradient(
-            135deg,
-            #003b7a,
-            #0066c7,
-            #0085e8
-        );
-
-    border-bottom: 3px solid #00346b;
-
-    box-shadow:
-        0 5px 22px rgba(0,61,122,0.25);
-}
-
-
-/* =========================
-   LOGO
-========================= */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    color: white;
-    white-space: nowrap;
-}
-
-.logo-icon {
-    font-size: 30px;
-}
-
-.logo-text {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.logo-main {
-    position: relative;
-
-    font-size: 37px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-    line-height: 1;
-}
-
-.logo-o {
-    position: relative;
-
-    display: inline-flex;
-
-    width: 32px;
-    height: 32px;
-
-    margin: 0 1px;
-
-    align-items: center;
-    justify-content: center;
-
-    vertical-align: middle;
-}
-
-.logo-ring {
-    width: 28px;
-    height: 28px;
-
-    border: 5px solid white;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    box-shadow:
-        0 0 0 2px rgba(255,255,255,0.18),
-        inset 0 0 8px rgba(255,255,255,0.25);
-}
-
-.logo-ring::before {
-    content: "";
-
-    position: absolute;
-
-    width: 14px;
-    height: 14px;
-
-    border: 3px solid #7ed0ff;
-
-    border-radius: 50%;
-}
-
-.logo-pearl {
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #ffffff,
-            #fff7d6 35%,
-            #e8c86c 75%,
-            #c99d36
-        );
-
-    box-shadow:
-        0 1px 5px rgba(0,0,0,0.35),
-        inset 1px 1px 3px rgba(255,255,255,0.9);
-
-    z-index: 2;
-}
-
-.logo-sub {
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 1.3px;
-
-    color: rgba(255,255,255,0.92);
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-.menu-toggle {
-    display: none;
-
-    width: 44px;
-    height: 44px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: rgba(255,255,255,0.13);
-
-    color: white;
-
-    font-size: 24px;
-
-    cursor: pointer;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.nav-menu a {
-    color: white;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    padding: 9px 11px;
-
-    border-radius: 9px;
-
-    transition: 0.25s;
-}
-
-.nav-menu a:hover {
-    background: white;
-    color: #0056b3;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.about-hero {
-    position: relative;
-    overflow: hidden;
-
-    padding: 75px 20px 85px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(0,119,255,0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 10% 80%,
-            rgba(0,174,239,0.14),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #e9f5ff,
-            #ffffff
-        );
-}
-
-.hero-badge {
-    display: inline-block;
-
-    padding: 8px 17px;
-
-    margin-bottom: 18px;
-
-    border-radius: 30px;
-
-    background: white;
-
-    color: #0066c7;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    box-shadow:
-        0 5px 18px rgba(0,75,153,0.10);
-}
-
-.about-hero .icon {
-    font-size: 50px;
-
-    margin-bottom: 10px;
-}
-
-.about-hero h1 {
-    color: #004f9e;
-
-    font-size: 44px;
-    line-height: 1.15;
-
-    font-weight: 900;
-
-    margin-bottom: 14px;
-}
-
-.about-hero h1 span {
-    color: #0084df;
-}
-
-.about-hero p {
-    max-width: 760px;
-
-    margin: auto;
-
-    color: #596879;
-
-    font-size: 17px;
-
-    line-height: 1.75;
-}
-
-
-/* =========================
-   COMMON SECTION
-========================= */
-
-.section {
-    max-width: 1120px;
-
-    margin: auto;
-
-    padding: 70px 20px;
-}
-
-.section-title {
-    text-align: center;
-
-    color: #0056b3;
-
-    font-size: 31px;
-
-    font-weight: 900;
-
-    margin-bottom: 28px;
-}
-
-
-/* =========================
-   MISSION
-========================= */
-
-.mission {
-    padding: 38px 35px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    border: 1px solid #dfebf7;
-
-    box-shadow:
-        0 9px 28px rgba(0,75,153,0.08);
-}
-
-.mission-icon {
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 15px;
-
-    border-radius: 16px;
-
-    background: #e9f5ff;
-
-    font-size: 28px;
-}
-
-.mission p {
-    max-width: 800px;
-
-    margin: auto;
-
-    font-size: 17px;
-
-    line-height: 1.75;
-
-    color: #596879;
-}
-
-
-/* =========================
-   HIGHLIGHTS
-========================= */
-
-.highlight-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.highlight {
-    padding: 28px 20px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f6fbff
-        );
-
-    border: 1px solid #dfebf7;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 7px 22px rgba(0,75,153,0.07);
-
-    transition: 0.25s;
-}
-
-.highlight:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 30px rgba(0,75,153,0.12);
-}
-
-.highlight-icon {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 14px;
-
-    border-radius: 15px;
-
-    background: #e9f5ff;
-
-    font-size: 28px;
-}
-
-.highlight h3 {
-    color: #0056b3;
-
-    margin-bottom: 8px;
-
-    font-size: 19px;
-}
-
-.highlight p {
-    color: #667085;
-
-    font-size: 14px;
-
-    line-height: 1.55;
-}
-
-
-/* =========================
-   SERVICES
-========================= */
-
-.services {
-    padding: 42px 30px;
-
-    border-radius: 23px;
-
-    color: white;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0056b3,
-            #0088e8
-        );
-
-    box-shadow:
-        0 15px 35px rgba(0,75,153,0.20);
-}
-
-.services h2 {
-    font-size: 29px;
-
-    margin-bottom: 25px;
-}
-
-.service-list {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    gap: 11px;
-}
-
-.service {
-    padding: 10px 16px;
-
-    border-radius: 30px;
-
-    background: rgba(255,255,255,0.98);
-
-    color: #0056b3;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.08);
-}
-
-
-/* =========================
-   HOME COLLECTION
-========================= */
-
-.home-collection {
-    padding: 38px 28px;
-
-    border-radius: 22px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #edf7ff
-        );
-
-    border: 1px solid #dcebf8;
-
-    box-shadow:
-        0 9px 28px rgba(0,75,153,0.08);
-}
-
-.home-icon {
-    font-size: 42px;
-
-    margin-bottom: 8px;
-}
-
-.home-collection h2 {
-    color: #0056b3;
-
-    font-size: 29px;
-
-    margin-bottom: 10px;
-}
-
-.home-collection p {
-    max-width: 750px;
-
-    margin: auto;
-
-    color: #667085;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-    padding: 65px 20px;
-
-    text-align: center;
-
-    background: white;
-}
-
-.cta h2 {
-    color: #0056b3;
-
-    font-size: 31px;
-
-    margin-bottom: 22px;
-}
-
-.cta-btn {
-    display: inline-block;
-
-    margin: 6px;
-
-    padding: 13px 25px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #005fc4,
-            #0086eb
-        );
-
-    color: white;
-
-    font-weight: 800;
-
-    box-shadow:
-        0 6px 17px rgba(0,102,204,0.18);
-}
-
-.cta-btn.secondary {
-    background: #edf6ff;
-
-    color: #0056b3;
-
-    box-shadow: none;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    padding: 45px 20px 95px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #002f61,
-            #004984
-        );
-
-    color: white;
-}
-
-.footer h3 {
-    font-size: 25px;
-
-    margin-bottom: 8px;
-}
-
-.footer p {
-    opacity: 0.88;
-
-    margin: 6px 0;
-
-    font-size: 14px;
-}
-
-.footer-line {
-    max-width: 600px;
-
-    margin: 23px auto 14px;
-
-    border-top:
-        1px solid rgba(255,255,255,0.25);
-}
-
-.copyright {
-    font-size: 12px !important;
-
-    opacity: 0.65 !important;
-}
-
-
-/* =========================
-   MOBILE BOTTOM BAR
-========================= */
-
-.mobile-bottom-bar {
-    display: none;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 950px) {
-
-    .nav-menu a {
-        font-size: 12px;
-        padding: 8px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073b70">
+  <title>About Us | MOTI Diagnostics Centre</title>
+  <style>
+    :root {
+      --navy: #073b70;
+      --blue: #0878cf;
+      --cyan: #19a8c7;
+      --ink: #172b42;
+      --muted: #64758a;
+      --pale: #edf7fc;
+      --line: #dceaf3;
+      --white: #fff;
+      --shadow: 0 18px 48px rgba(8, 55, 96, .09);
+      --radius: 22px;
     }
-
-    .highlight-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 650px) {
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-        padding-bottom: 72px;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #f7fbfd;
+      line-height: 1.65;
+      overflow-x: hidden;
     }
-
-
-    /* HEADER */
-
+    a { color: inherit; text-decoration: none; }
     .header {
-        min-height: 68px;
-
-        padding: 9px 12px;
-
-        gap: 8px;
+      position: sticky; top: 0; z-index: 1000;
+      min-height: 76px; padding: 12px clamp(18px, 5vw, 72px);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      color: white; background: rgba(7, 59, 112, .97);
+      box-shadow: 0 8px 28px rgba(4, 39, 75, .16);
+      backdrop-filter: blur(14px);
     }
-
-    .logo {
-        gap: 5px;
-
-        min-width: 0;
-
-        overflow: hidden;
-    }
-
-    .logo-icon {
-        font-size: 22px;
-    }
-
-    .logo-text {
-        gap: 4px;
-
-        min-width: 0;
-    }
-
-    .logo-main {
-        font-size: 27px;
-
-        letter-spacing: 1px;
-    }
-
-    .logo-o {
-        width: 25px;
-        height: 25px;
-    }
-
-    .logo-ring {
-        width: 22px;
-        height: 22px;
-
-        border-width: 4px;
-    }
-
-    .logo-ring::before {
-        width: 11px;
-        height: 11px;
-
-        border-width: 2px;
-    }
-
-    .logo-pearl {
-        width: 6px;
-        height: 6px;
-    }
-
-    .logo-sub {
-        font-size: 7px;
-
-        letter-spacing: 0.7px;
-
-        margin-left: 1px;
-    }
-
-
-    /* MENU */
-
-    .menu-toggle {
-        display: block;
-
-        flex-shrink: 0;
-    }
-
-    .nav-menu {
-        position: absolute;
-
-        top: 67px;
-        left: 10px;
-        right: 10px;
-
-        display: none;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 5px;
-
-        padding: 10px;
-
-        background: white;
-
-        border: 1px solid #e1ebf5;
-
-        border-radius: 15px;
-
-        box-shadow:
-            0 12px 30px rgba(0,0,0,0.18);
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
+    .logo { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .logo-icon { font-size: 30px; }
+    .logo-main { font-size: 30px; font-weight: 900; letter-spacing: 2px; line-height: 1; }
+    .logo-sub { display: block; margin-top: 5px; font-size: 9px; font-weight: 800; letter-spacing: 2px; opacity: .82; }
+    .nav-menu { display: flex; align-items: center; gap: 5px; }
     .nav-menu a {
-        display: block;
-
-        padding: 12px 14px;
-
-        color: #0056b3;
-
-        background: #f5f9ff;
-
-        border-radius: 10px;
-
-        font-size: 14px;
+      padding: 10px 13px; border-radius: 10px; color: rgba(255,255,255,.88);
+      font-size: 13px; font-weight: 700; transition: .2s ease;
     }
-
-    .nav-menu a:hover {
-        color: white;
-
-        background: #0066cc;
+    .nav-menu a:hover, .nav-menu a[aria-current="page"] { color: white; background: rgba(255,255,255,.15); }
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.25);
+      border-radius: 12px; color: white; background: rgba(255,255,255,.1);
+      font-size: 22px; cursor: pointer;
     }
-
-
-    /* HERO */
-
-    .about-hero {
-        padding: 55px 18px 60px;
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding: clamp(70px, 10vw, 124px) 20px clamp(82px, 11vw, 140px);
+      text-align: center; color: white;
+      background: linear-gradient(125deg, #062f5b 0%, #0878cf 58%, #16a6c5 100%);
     }
-
-    .about-hero .icon {
-        font-size: 43px;
+    .hero::before, .hero::after {
+      content: ""; position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%; width: 390px; height: 390px;
     }
-
-    .hero-badge {
-        font-size: 11px;
-
-        padding: 7px 13px;
+    .hero::before { top: -250px; left: -90px; box-shadow: 0 0 0 38px rgba(255,255,255,.035), 0 0 0 78px rgba(255,255,255,.025); }
+    .hero::after { right: -130px; bottom: -300px; width: 520px; height: 520px; box-shadow: 0 0 0 42px rgba(255,255,255,.035); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
+      padding: 8px 15px; border: 1px solid rgba(255,255,255,.25); border-radius: 30px;
+      background: rgba(255,255,255,.11); font-size: 12px; font-weight: 800; letter-spacing: .8px;
     }
-
-    .about-hero h1 {
-        font-size: 32px;
-
-        line-height: 1.2;
-    }
-
-    .about-hero p {
-        font-size: 15px;
-
-        line-height: 1.65;
-    }
-
-
-    /* SECTIONS */
-
-    .section {
-        padding: 50px 15px;
-    }
-
-    .section-title {
-        font-size: 27px;
-
-        line-height: 1.25;
-
-        margin-bottom: 23px;
-    }
-
-
-    /* MISSION */
-
+    .hero-icon { margin-bottom: 12px; font-size: 42px; }
+    .hero h1 { max-width: 850px; margin: 0 auto 18px; font-size: clamp(36px, 6vw, 62px); line-height: 1.08; letter-spacing: -1.8px; }
+    .hero h1 span { color: #bcefff; }
+    .hero p { max-width: 710px; margin: auto; color: rgba(255,255,255,.86); font-size: clamp(15px, 2vw, 18px); }
+    .content { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .section { padding: 76px 0; }
+    .section-heading { margin-bottom: 30px; text-align: center; }
+    .section-kicker { color: var(--blue); font-size: 11px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .section-title { margin-top: 7px; color: var(--navy); font-size: clamp(27px, 4vw, 38px); line-height: 1.2; letter-spacing: -.7px; }
+    .section-intro { max-width: 650px; margin: 12px auto 0; color: var(--muted); font-size: 15px; }
     .mission {
-        padding: 28px 20px;
-
-        border-radius: 18px;
+      display: grid; grid-template-columns: 76px 1fr; align-items: center; gap: 24px;
+      padding: clamp(26px, 5vw, 48px); border: 1px solid var(--line);
+      border-radius: var(--radius); background: white; box-shadow: var(--shadow);
     }
-
-    .mission p {
-        font-size: 15px;
-
-        line-height: 1.7;
+    .mission-icon, .feature-icon {
+      display: grid; place-items: center; width: 64px; height: 64px;
+      border-radius: 19px; background: linear-gradient(145deg, #e4f5fc, #f1f8ff);
+      font-size: 29px;
     }
-
-
-    /* HIGHLIGHTS */
-
-    .highlight-grid {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
+    .mission h3 { margin-bottom: 7px; color: var(--navy); font-size: 21px; }
+    .mission p { color: var(--muted); font-size: 16px; }
+    .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .feature {
+      min-height: 220px; padding: 27px 22px; border: 1px solid var(--line);
+      border-radius: 19px; background: white; box-shadow: 0 8px 26px rgba(8,55,96,.045);
+      transition: transform .22s ease, box-shadow .22s ease;
     }
-
-    .highlight {
-        padding: 23px 18px;
-
-        border-radius: 17px;
-    }
-
-    .highlight-icon {
-        width: 50px;
-        height: 50px;
-
-        font-size: 25px;
-    }
-
-
-    /* SERVICES */
-
+    .feature:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .feature-icon { width: 54px; height: 54px; margin-bottom: 20px; border-radius: 16px; font-size: 25px; }
+    .feature h3 { margin-bottom: 8px; color: var(--navy); font-size: 18px; }
+    .feature p { color: var(--muted); font-size: 14px; }
     .services {
-        padding: 30px 17px;
-
-        border-radius: 20px;
+      padding: clamp(30px, 5vw, 52px); border-radius: 26px; color: white;
+      background: linear-gradient(125deg, #073b70, #0878cf 70%, #16a6c5);
+      box-shadow: 0 20px 45px rgba(7, 76, 132, .18);
     }
-
-    .services h2 {
-        font-size: 25px;
-
-        margin-bottom: 20px;
+    .services .section-kicker { color: #aeeaff; }
+    .services .section-title { color: white; }
+    .services .section-intro { color: rgba(255,255,255,.78); }
+    .service-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+    .service { padding: 9px 15px; border: 1px solid rgba(255,255,255,.2); border-radius: 30px; background: rgba(255,255,255,.12); font-size: 13px; font-weight: 700; }
+    .home-card {
+      display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 25px;
+      padding: clamp(26px, 5vw, 44px); border: 1px solid var(--line);
+      border-radius: var(--radius); background: linear-gradient(120deg, #fff, #edf8fc);
     }
-
-    .service-list {
-        gap: 8px;
+    .home-icon { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; background: #dff3fb; font-size: 36px; }
+    .home-card h2 { margin-bottom: 8px; color: var(--navy); font-size: 25px; }
+    .home-card p { color: var(--muted); }
+    .cta { padding: 72px 20px; text-align: center; background: white; }
+    .cta h2 { margin-bottom: 12px; color: var(--navy); font-size: clamp(27px, 4vw, 38px); }
+    .cta p { margin-bottom: 25px; color: var(--muted); }
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center; gap: 9px;
+      min-height: 48px; margin: 5px; padding: 12px 23px; border: 1px solid var(--blue);
+      border-radius: 12px; color: white; background: var(--blue); font-weight: 800;
+      box-shadow: 0 8px 20px rgba(8,120,207,.18); transition: .2s ease;
     }
-
-    .service {
-        padding: 9px 13px;
-
-        font-size: 13px;
+    .btn:hover { transform: translateY(-2px); background: var(--navy); }
+    .btn.secondary { color: var(--navy); background: white; border-color: var(--line); box-shadow: none; }
+    .footer { padding: 44px 20px 34px; text-align: center; color: white; background: #062d53; }
+    .footer h3 { margin-bottom: 8px; font-size: 21px; letter-spacing: .7px; }
+    .footer p { margin: 6px 0; color: rgba(255,255,255,.76); font-size: 13px; }
+    .footer-line { width: min(520px, 85%); margin: 24px auto 16px; border-top: 1px solid rgba(255,255,255,.18); }
+    .copyright { font-size: 11px !important; opacity: .65; }
+    .mobile-bottom-bar { display: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #f4c95d; outline-offset: 3px; }
+    @media (max-width: 900px) {
+      .nav-menu a { padding: 9px 8px; font-size: 12px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
     }
-
-
-    /* HOME COLLECTION */
-
-    .home-collection {
-        padding: 30px 19px;
-
-        border-radius: 19px;
+    @media (max-width: 680px) {
+      body { padding-bottom: 68px; }
+      .header { min-height: 68px; padding: 9px 15px; }
+      .logo-icon { font-size: 24px; }
+      .logo-main { font-size: 26px; }
+      .logo-sub { font-size: 8px; letter-spacing: 1.5px; }
+      .menu-toggle { display: block; flex: 0 0 44px; }
+      .nav-menu {
+        position: absolute; top: 68px; left: 12px; right: 12px; display: none;
+        flex-direction: column; align-items: stretch; gap: 4px; padding: 10px;
+        border: 1px solid var(--line); border-radius: 16px; background: white;
+        box-shadow: 0 18px 36px rgba(5, 43, 79, .18);
+      }
+      .nav-menu.show { display: flex; }
+      .nav-menu a { padding: 12px 14px; color: var(--navy); background: #f4f9fc; font-size: 14px; }
+      .nav-menu a:hover, .nav-menu a[aria-current="page"] { color: white; background: var(--blue); }
+      .section { padding: 54px 0; }
+      .content { width: min(100% - 30px, 560px); }
+      .mission { grid-template-columns: 1fr; gap: 16px; }
+      .features { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .feature { min-height: 0; padding: 20px 16px; }
+      .feature-icon { margin-bottom: 13px; }
+      .home-card { grid-template-columns: 1fr; gap: 16px; }
+      .cta { padding: 55px 18px; }
+      .cta .btn { display: flex; width: min(100%, 340px); margin: 10px auto; }
+      .mobile-bottom-bar {
+        position: fixed; z-index: 1100; right: 0; bottom: 0; left: 0;
+        display: flex; padding: 7px 9px calc(7px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--line); background: rgba(255,255,255,.96);
+        box-shadow: 0 -8px 24px rgba(8,55,96,.1); backdrop-filter: blur(12px);
+      }
+      .mobile-bottom-bar a {
+        display: flex; flex: 1; min-height: 51px; flex-direction: column;
+        align-items: center; justify-content: center; gap: 1px;
+        border-radius: 10px; color: var(--navy); font-size: 11px; font-weight: 800;
+      }
+      .mobile-bottom-bar a:nth-child(2) { color: #13834c; }
+      .mobile-bottom-bar a:nth-child(3) { color: white; background: var(--blue); }
     }
-
-    .home-icon {
-        font-size: 38px;
+    @media (max-width: 390px) {
+      .features { grid-template-columns: 1fr; }
+      .hero h1 { letter-spacing: -1px; }
     }
-
-    .home-collection h2 {
-        font-size: 25px;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
-
-    .home-collection p {
-        font-size: 14px;
-
-        line-height: 1.65;
-    }
-
-
-    /* CTA */
-
-    .cta {
-        padding: 52px 15px;
-    }
-
-    .cta h2 {
-        font-size: 27px;
-
-        line-height: 1.3;
-    }
-
-    .cta-btn {
-        display: block;
-
-        width: 100%;
-
-        max-width: 330px;
-
-        margin: 10px auto;
-
-        padding: 14px;
-
-        text-align: center;
-    }
-
-
-    /* BOTTOM BAR */
-
-    .mobile-bottom-bar {
-        display: flex;
-
-        position: fixed;
-
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        z-index: 9999;
-
-        padding: 7px 8px;
-
-        background: rgba(255,255,255,0.97);
-
-        backdrop-filter: blur(10px);
-
-        box-shadow:
-            0 -5px 20px rgba(0,0,0,0.14);
-
-        border-top:
-            1px solid #e4edf7;
-    }
-
-    .mobile-bottom-bar a {
-        flex: 1;
-
-        min-height: 56px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 2px;
-
-        border-radius: 10px;
-
-        color: #0056b3;
-
-        font-size: 11px;
-
-        font-weight: 800;
-    }
-
-    .mobile-bottom-bar a:nth-child(2) {
-        color: #0b9b50;
-    }
-
-    .mobile-bottom-bar a:nth-child(3) {
-        color: white;
-
-        background:
-            linear-gradient(
-                135deg,
-                #005fc4,
-                #0086eb
-            );
-    }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 400px) {
-
-    .logo-main {
-        font-size: 24px;
-    }
-
-    .logo-sub {
-        font-size: 6.3px;
-
-        letter-spacing: 0.4px;
-    }
-
-    .logo-icon {
-        font-size: 20px;
-    }
-
-    .about-hero h1 {
-        font-size: 29px;
-    }
-
-}
-
-</style>
-
+  </style>
 </head>
-
 <body>
+  <header class="header">
+    <a class="logo" href="/" aria-label="MOTI Diagnostics Centre home">
+      <span class="logo-icon" aria-hidden="true">🔬</span>
+      <span><span class="logo-main">MOTI</span><span class="logo-sub">DIAGNOSTICS CENTRE</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu" onclick="toggleMenu()">☰</button>
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+      <a href="/">🏠 Home</a>
+      <a href="/tests">🧪 Tests</a>
+      <a href="/book-test">📅 Book Test</a>
+      <a href="/about" aria-current="page">📖 About Us</a>
+      <a href="/contact">📞 Contact Us</a>
+      <a href="tel:+918286289143">Call Us</a>
+    </nav>
+  </header>
 
-<!-- ================= HEADER ================= -->
+  <main>
+    <section class="hero">
+      <div class="eyebrow">🧬 &nbsp; TRUSTED DIAGNOSTIC CARE</div>
+      <div class="hero-icon" aria-hidden="true">🩺</div>
+      <h1>Care you can trust.<br><span>Clarity you deserve.</span></h1>
+      <p>MOTI Diagnostics Centre is committed to providing accurate and reliable diagnostic services using modern technology, with a focus on patient comfort and convenient healthcare.</p>
+    </section>
 
-<header class="header">
-
-<div class="logo">
-
-    <span class="logo-icon">🔬</span>
-
-    <div class="logo-text">
-
-        <span class="logo-main">
-            M<span class="logo-o">
-                <span class="logo-ring">
-                    <span class="logo-pearl"></span>
-                </span>
-            </span>TI
-        </span>
-
-        <span class="logo-sub">
-            DIAGNOSTICS CENTRE
-        </span>
-
-    </div>
-
-</div>
-
-
-<button
-    class="menu-toggle"
-    type="button"
-    aria-label="Open menu"
-    onclick="toggleMenu()"
->
-    ☰
-</button>
-
-
-<nav class="nav-menu" id="navMenu">
-
-    <a href="/" onclick="closeMenu()">🏠 Home</a>
-
-    <a href="/tests" onclick="closeMenu()">🧪 Tests</a>
-
-    <a href="/book-test" onclick="closeMenu()">📅 Book Test</a>
-
-    <a href="/about" onclick="closeMenu()">📖 About Us</a>
-
-    <a href="/contact" onclick="closeMenu()">📞 Contact Us</a>
-
-    <a href="tel:+918286289143">📞 Call</a>
-
-</nav>
-
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="about-hero">
-
-
-<div class="hero-badge">
-    🧬 Trusted Diagnostic Care
-</div>
-
-<div class="icon">
-    🩺
-</div>
-
-<h1>
-    About <span>MOTI Diagnostics</span>
-</h1>
-
-<p>
-    MOTI Diagnostics Centre is committed to providing
-    accurate and reliable diagnostic services using
-    modern technology with a focus on patient comfort
-    and convenient healthcare.
-</p>
-
-
-</section>
-
-<!-- ================= MISSION ================= -->
-
-<section class="section">
-
-
-<h2 class="section-title">
-    Our Mission
-</h2>
-
-<div class="mission">
-
-    <div class="mission-icon">
-        🎯
-    </div>
-
-    <p>
-        Our mission is to deliver accurate diagnosis,
-        timely reports and compassionate patient care.
-        We aim to make quality diagnostic services
-        accessible and convenient for every patient.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- ================= WHY CHOOSE ================= -->
-
-<section class="section">
-
-
-<h2 class="section-title">
-    Why Choose MOTI?
-</h2>
-
-<div class="highlight-grid">
-
-
-    <div class="highlight">
-
-        <div class="highlight-icon">
-            🎯
+    <section class="section">
+      <div class="content">
+        <div class="section-heading">
+          <div class="section-kicker">What guides us</div>
+          <h2 class="section-title">Our Mission</h2>
         </div>
-
-        <h3>
-            Accurate
-        </h3>
-
-        <p>
-            Reliable diagnostic testing with attention
-            to accuracy and quality.
-        </p>
-
-    </div>
-
-
-    <div class="highlight">
-
-        <div class="highlight-icon">
-            ⚡
+        <div class="mission">
+          <div class="mission-icon" aria-hidden="true">🎯</div>
+          <div>
+            <h3>Better diagnostics. Thoughtful care.</h3>
+            <p>Our mission is to deliver accurate diagnosis, timely reports and compassionate patient care. We aim to make quality diagnostic services accessible and convenient for every patient.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <h3>
-            Fast Reports
-        </h3>
-
-        <p>
-            Timely reports to help you stay informed
-            about your health.
-        </p>
-
-    </div>
-
-
-    <div class="highlight">
-
-        <div class="highlight-icon">
-            💙
+    <section class="section" style="padding-top: 8px;">
+      <div class="content">
+        <div class="section-heading">
+          <div class="section-kicker">The MOTI difference</div>
+          <h2 class="section-title">Why Choose MOTI?</h2>
+          <p class="section-intro">A patient-first approach at every step of your diagnostic journey.</p>
         </div>
-
-        <h3>
-            Patient Care
-        </h3>
-
-        <p>
-            A patient-focused approach with
-            compassionate service.
-        </p>
-
-    </div>
-
-
-    <div class="highlight">
-
-        <div class="highlight-icon">
-            🏠
+        <div class="features">
+          <article class="feature"><div class="feature-icon" aria-hidden="true">🎯</div><h3>Accurate Testing</h3><p>Reliable diagnostic testing with attention to accuracy and quality.</p></article>
+          <article class="feature"><div class="feature-icon" aria-hidden="true">⚡</div><h3>Timely Reports</h3><p>Timely reports to help you stay informed about your health.</p></article>
+          <article class="feature"><div class="feature-icon" aria-hidden="true">💙</div><h3>Patient Care</h3><p>A patient-focused approach with compassionate service.</p></article>
+          <article class="feature"><div class="feature-icon" aria-hidden="true">🏠</div><h3>Home Collection</h3><p>Convenient sample collection available at home.</p></article>
         </div>
-
-        <h3>
-            Home Collection
-        </h3>
-
-        <p>
-            Convenient sample collection available
-            at home.
-        </p>
-
-    </div>
-
-
-</div>
-
-
-</section>
-
-<!-- ================= SERVICES ================= -->
-
-<section class="section">
-
-
-<div class="services">
-
-    <h2>
-        🧪 Our Diagnostic Services
-    </h2>
-
-    <div class="service-list">
-
-        <span class="service">CBC</span>
-
-        <span class="service">Blood Sugar</span>
-
-        <span class="service">Lipid Profile</span>
-
-        <span class="service">LFT</span>
-
-        <span class="service">KFT</span>
-
-        <span class="service">ECG</span>
-
-        <span class="service">2D Echo</span>
-
-        <span class="service">X-Ray</span>
-
-        <span class="service">Ultrasound</span>
-
-        <span class="service">MRI</span>
-
-        <span class="service">CT Scan</span>
-
-        <span class="service">Thyroid Tests</span>
-
-        <span class="service">Diabetes Tests</span>
-
-        <span class="service">Hormone Tests</span>
-
-        <span class="service">Health Packages</span>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- ================= HOME COLLECTION ================= -->
-
-<section class="section">
-
-
-<div class="home-collection">
-
-    <div class="home-icon">
-        🏠
-    </div>
-
-    <h2>
-        Home Sample Collection
-    </h2>
-
-    <p>
-        Can't visit the centre?
-        We offer convenient home sample collection
-        so you can access diagnostic services from
-        the comfort of your home.
-    </p>
-
-</div>
-
-</section>
-
-<!-- ================= CTA ================= -->
-
-<section class="cta">
-
-<h2>
-    Ready to Book Your Test?
-</h2>
-
-<a
-    href="/book-test"
-    class="cta-btn"
->
-    📅 Book Test
-</a>
-
-<a
-    href="/tests"
-    class="cta-btn secondary"
->
-    🧪 View Tests
-</a>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-<h3>
-    MOTI DIAGNOSTICS CENTRE
-</h3>
-
-<p>
-    Reliable Diagnostic Services for You and Your Family
-</p>
-
-<p>
-    📍 Shanti Garden, Mira Road (E), Thane – 401107
-</p>
-
-<p>
-    📞 +91 8286289143
-</p>
-
-<div class="footer-line"></div>
-
-<p class="copyright">
-    © 2026 MOTI DIAGNOSTICS CENTRE.
-    All Rights Reserved.
-</p>
-
-</footer>
-
-<!-- ================= MOBILE BOTTOM BAR ================= -->
-
-<div class="mobile-bottom-bar">
-
-<a href="tel:+918286289143">
-
-    <span>📞</span>
-
-    <span>Call</span>
-
-</a>
-
-
-<a href="https://wa.me/919867242848">
-
-    <span>💬</span>
-
-    <span>WhatsApp</span>
-
-</a>
-
-
-<a href="/book-test">
-
-    <span>🧪</span>
-
-    <span>Book Test</span>
-
-</a>
-
-</div>
-
-<!-- ================= SCRIPT ================= -->
-
-<script>
-
-function toggleMenu() {
-
-    const menu =
-        document.getElementById("navMenu");
-
-    menu.classList.toggle("show");
-
-}
-
-
-function closeMenu() {
-
-    const menu =
-        document.getElementById("navMenu");
-
-    menu.classList.remove("show");
-
-}
-
-
-document.addEventListener(
-    "click",
-    function(event) {
-
-        const menu =
-            document.getElementById("navMenu");
-
-        const toggle =
-            document.querySelector(".menu-toggle");
-
-        if (
-            menu &&
-            toggle &&
-            !menu.contains(event.target) &&
-            !toggle.contains(event.target)
-        ) {
-
-            menu.classList.remove("show");
-
-        }
-
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 8px;">
+      <div class="content">
+        <div class="services">
+          <div class="section-heading">
+            <div class="section-kicker">Our capabilities</div>
+            <h2 class="section-title">Diagnostic Services</h2>
+            <p class="section-intro">Explore a range of diagnostic tests and services.</p>
+          </div>
+          <div class="service-list">
+            <span class="service">CBC</span><span class="service">Blood Sugar</span><span class="service">Lipid Profile</span>
+            <span class="service">LFT</span><span class="service">KFT</span><span class="service">ECG</span>
+            <span class="service">2D Echo</span><span class="service">X-Ray</span><span class="service">Ultrasound</span>
+            <span class="service">MRI</span><span class="service">CT Scan</span><span class="service">Thyroid Tests</span>
+            <span class="service">Diabetes Tests</span><span class="service">Hormone Tests</span><span class="service">Health Packages</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 8px;">
+      <div class="content">
+        <div class="home-card">
+          <div class="home-icon" aria-hidden="true">🏠</div>
+          <div><div class="section-kicker">Healthcare at your doorstep</div><h2>Home Sample Collection</h2><p>Can't visit the centre? We offer convenient home sample collection so you can access diagnostic services from the comfort of your home.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Your health deserves clarity.</h2>
+      <p>Take the next step towards informed healthcare.</p>
+      <a href="/book-test" class="btn">📅 &nbsp; Book a Test</a>
+      <a href="/tests" class="btn secondary">🧪 &nbsp; Explore All Tests</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h3>MOTI DIAGNOSTICS CENTRE</h3>
+    <p>Reliable Diagnostic Services for You and Your Family</p>
+    <p>📍 Shanti Garden, Mira Road (E), Thane – 401107</p>
+    <p>📞 <a href="tel:+918286289143">+91 8286289143</a></p>
+    <div class="footer-line"></div>
+    <p class="copyright">© 2026 MOTI DIAGNOSTICS CENTRE. All Rights Reserved.</p>
+  </footer>
+
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:+918286289143"><span>📞</span><span>Call</span></a>
+    <a href="https://wa.me/919867242848"><span>💬</span><span>WhatsApp</span></a>
+    <a href="/book-test"><span>🧪</span><span>Book Test</span></a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      const button = document.querySelector(".menu-toggle");
+      const isOpen = menu.classList.toggle("show");
+      button.setAttribute("aria-expanded", String(isOpen));
+      button.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      button.textContent = isOpen ? "×" : "☰";
     }
-);
 
-</script>
+    function closeMenu() {
+      const menu = document.getElementById("navMenu");
+      const button = document.querySelector(".menu-toggle");
+      menu.classList.remove("show");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Open navigation");
+      button.textContent = "☰";
+    }
 
+    document.querySelectorAll("#navMenu a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", event => {
+      const menu = document.getElementById("navMenu");
+      const button = document.querySelector(".menu-toggle");
+      if (!menu.contains(event.target) && !button.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMenu();
+    });
+  </script>
 </body>
-
 </html>
