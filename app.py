@@ -13,6 +13,11 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/gallery")
+def gallery():
+    return render_template("gallery.html")
+
+
 @app.route("/tests")
 def tests():
     return render_template("tests.html")
